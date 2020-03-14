@@ -1,0 +1,8 @@
+{
+  "properties": [
+    {
+      "name": "app.routing.api.prefix",
+      "type": "java.lang.String",
+      "description": "Description for app.routing.api.prefix."
+  }
+] }

@@ -8,11 +8,11 @@
 		<version>2.2.2.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.ttmdear.recipeapp</groupId>
-	<artifactId>com-ttmdear-recipeapp</artifactId>
+	<groupId>com.ttmdear.repository.jpa</groupId>
+	<artifactId>ttmdear-repository-jpa</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>com-ttmdear-recipeapp</name>
-	<description>Demo project for Spring Boot</description>
+	<name>${artifactId}</name>
+	<description>Testing JPA</description>
 
 	<properties>
 		<java.version>1.8</java.version>
@@ -54,5 +54,4 @@
 			</plugin>
 		</plugins>
 	</build>
-
 </project>

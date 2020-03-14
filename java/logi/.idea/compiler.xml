@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="logi-springboot-starter" />
+        <module name="logi" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="logi" target="1.7" />
+      <module name="logi (1)" target="1.7" />
+      <module name="logi-parent" target="1.7" />
+      <module name="logi-springboot-starter" target="1.7" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
