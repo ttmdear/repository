@@ -1,0 +1,197 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+Text Notes 800  650  0    50   ~ 0
+Filtr RC dolnoprzepustowy
+$Comp
+L Device:R R1
+U 1 1 5EDD087A
+P 1200 950
+F 0 "R1" V 1100 950 50  0000 C CNN
+F 1 "R" V 1084 950 50  0001 C CNN
+F 2 "" V 1130 950 50  0001 C CNN
+F 3 "~" H 1200 950 50  0001 C CNN
+	1    1200 950 
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	800  950  1050 950 
+$Comp
+L Device:C C1
+U 1 1 5EDD1103
+P 1550 1250
+F 0 "C1" H 1665 1250 50  0000 L CNN
+F 1 "C" H 1665 1205 50  0001 L CNN
+F 2 "" H 1588 1100 50  0001 C CNN
+F 3 "~" H 1550 1250 50  0001 C CNN
+	1    1550 1250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1350 950  1550 950 
+Wire Wire Line
+	1550 950  1550 1100
+Wire Wire Line
+	1550 950  2050 950 
+Connection ~ 1550 950 
+$Comp
+L power:GND #PWR?
+U 1 1 5EDD25E1
+P 1550 1550
+F 0 "#PWR?" H 1550 1300 50  0001 C CNN
+F 1 "GND" H 1555 1377 50  0000 C CNN
+F 2 "" H 1550 1550 50  0001 C CNN
+F 3 "" H 1550 1550 50  0001 C CNN
+	1    1550 1550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1550 1400 1550 1550
+Text Notes 2100 1000 0    50   ~ 0
+Vout
+$Comp
+L power:AC Signal
+U 1 1 5EDE9365
+P 800 1500
+F 0 "Signal" H 900 1750 50  0000 R CNN
+F 1 "AC" H 800 1775 50  0001 C CNN
+F 2 "" H 800 1500 50  0001 C CNN
+F 3 "" H 800 1500 50  0001 C CNN
+	1    800  1500
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	800  950  800  1500
+$Comp
+L power:AC Signal?
+U 1 1 5EDEDDB3
+P 2750 1050
+F 0 "Signal?" H 2850 1300 50  0000 R CNN
+F 1 "AC" H 2750 1325 50  0001 C CNN
+F 2 "" H 2750 1050 50  0001 C CNN
+F 3 "" H 2750 1050 50  0001 C CNN
+	1    2750 1050
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R R1
+U 1 1 5EDEF242
+P 3450 1150
+F 0 "R1" V 3350 1150 50  0000 C CNN
+F 1 "R" V 3334 1150 50  0001 C CNN
+F 2 "" V 3380 1150 50  0001 C CNN
+F 3 "~" H 3450 1150 50  0001 C CNN
+	1    3450 1150
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:C C1
+U 1 1 5EDEF248
+P 3450 1550
+F 0 "C1" H 3565 1550 50  0000 L CNN
+F 1 "C" H 3565 1505 50  0001 L CNN
+F 2 "" H 3488 1400 50  0001 C CNN
+F 3 "~" H 3450 1550 50  0001 C CNN
+	1    3450 1550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3450 1300 3450 1400
+Wire Wire Line
+	2750 900  3450 900 
+Wire Wire Line
+	3450 1000 3450 900 
+Connection ~ 3450 900 
+Wire Wire Line
+	3450 900  4200 900 
+$Comp
+L power:GND #PWR?
+U 1 1 5EDF2B55
+P 3450 1850
+F 0 "#PWR?" H 3450 1600 50  0001 C CNN
+F 1 "GND" H 3455 1677 50  0000 C CNN
+F 2 "" H 3450 1850 50  0001 C CNN
+F 3 "" H 3450 1850 50  0001 C CNN
+	1    3450 1850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3450 1700 3450 1850
+Text Notes 4300 950  0    50   ~ 0
+Vout
+Wire Wire Line
+	2750 900  2750 1050
+Text Notes 800  2350 0    50   ~ 0
+Filtr RC górnoprzepustowy
+$Comp
+L Device:R R1
+U 1 1 5EDF708D
+P 1400 2800
+F 0 "R1" V 1300 2800 50  0000 C CNN
+F 1 "R" V 1284 2800 50  0001 C CNN
+F 2 "" V 1330 2800 50  0001 C CNN
+F 3 "~" H 1400 2800 50  0001 C CNN
+	1    1400 2800
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:C C1
+U 1 1 5EDF7094
+P 1000 2600
+F 0 "C1" H 1115 2600 50  0000 L CNN
+F 1 "C" H 1115 2555 50  0001 L CNN
+F 2 "" H 1038 2450 50  0001 C CNN
+F 3 "~" H 1000 2600 50  0001 C CNN
+	1    1000 2600
+	0    1    1    0   
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5EDF709E
+P 1400 3150
+F 0 "#PWR?" H 1400 2900 50  0001 C CNN
+F 1 "GND" H 1405 2977 50  0000 C CNN
+F 2 "" H 1400 3150 50  0001 C CNN
+F 3 "" H 1400 3150 50  0001 C CNN
+	1    1400 3150
+	1    0    0    -1  
+$EndComp
+Text Notes 1850 2600 0    50   ~ 0
+Vout
+$Comp
+L power:AC Signal
+U 1 1 5EDF70A6
+P 750 3100
+F 0 "Signal" H 850 3350 50  0000 R CNN
+F 1 "AC" H 750 3375 50  0001 C CNN
+F 2 "" H 750 3100 50  0001 C CNN
+F 3 "" H 750 3100 50  0001 C CNN
+	1    750  3100
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	750  3100 750  2600
+Wire Wire Line
+	750  2600 850  2600
+Wire Wire Line
+	1150 2600 1400 2600
+Wire Wire Line
+	1400 2600 1400 2650
+Wire Wire Line
+	1400 2600 1800 2600
+Connection ~ 1400 2600
+Wire Wire Line
+	1400 2950 1400 3150
+$EndSCHEMATC

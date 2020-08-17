@@ -1,0 +1,3 @@
+/home/thinkpad/workspace/tetris/game-cpp/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/thinkpad/workspace/tetris/game-cpp/cmake-build-debug/CMakeFiles/simple_example.dir
+/home/thinkpad/workspace/tetris/game-cpp/cmake-build-debug/CMakeFiles/edit_cache.dir

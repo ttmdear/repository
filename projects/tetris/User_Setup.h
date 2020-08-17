@@ -1,0 +1,4 @@
+#ifdef _TETRIS_USER_SETUP_H_
+#define _TETRIS_USER_SETUP_H_
+
+#endif //_TETRIS_USER_SETUP_H_

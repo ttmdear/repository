@@ -1,0 +1,7 @@
+/home/thinkpad/bin/clion-2019.3.2/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/thinkpad/workspace/tetris/tetris-arduino
+-- Generating tetris_arduino
+-- Generating pro_LiquidCrystal for library LiquidCrystal
+-- Using /opt/arduino-1.8.9/hardware/tools/avr/bin/avr-objcopy for converting firmware image to hex
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/thinkpad/workspace/tetris/tetris-arduino/cmake-build-debug

@@ -114,7 +114,7 @@ int pozycja = 0; //Aktualna pozycja serwa 0-180
 int zmiana = 6; //Co ile ma się zmieniać pozycja serwa?
 
 void setup() {
-    // Serial.begin(9600); // open the serial port at 9600 bps:
+    Serial.begin(9600); // open the serial port at 9600 bps:
 
     controller.start();
     controller.setFulfillment(1000);

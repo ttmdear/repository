@@ -1,0 +1,77 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+Text Notes 500  600  0    50   ~ 0
+Filtr RC dolnoprzepustowy
+$Comp
+L power:+5V #PWR?
+U 1 1 5EDD0432
+P 800 1550
+F 0 "#PWR?" H 800 1400 50  0001 C CNN
+F 1 "+5V" H 815 1723 50  0000 C CNN
+F 2 "" H 800 1550 50  0001 C CNN
+F 3 "" H 800 1550 50  0001 C CNN
+	1    800  1550
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R R1
+U 1 1 5EDD087A
+P 1200 950
+F 0 "R1" V 1100 950 50  0000 C CNN
+F 1 "R" V 1084 950 50  0001 C CNN
+F 2 "" V 1130 950 50  0001 C CNN
+F 3 "~" H 1200 950 50  0001 C CNN
+	1    1200 950 
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	800  950  1050 950 
+$Comp
+L Device:C C1
+U 1 1 5EDD1103
+P 1550 1250
+F 0 "C1" H 1665 1250 50  0000 L CNN
+F 1 "C" H 1665 1205 50  0001 L CNN
+F 2 "" H 1588 1100 50  0001 C CNN
+F 3 "~" H 1550 1250 50  0001 C CNN
+	1    1550 1250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1350 950  1550 950 
+Wire Wire Line
+	1550 950  1550 1100
+Wire Wire Line
+	800  950  800  1550
+Wire Wire Line
+	1550 950  2050 950 
+Connection ~ 1550 950 
+$Comp
+L power:GND #PWR?
+U 1 1 5EDD25E1
+P 1550 1550
+F 0 "#PWR?" H 1550 1300 50  0001 C CNN
+F 1 "GND" H 1555 1377 50  0000 C CNN
+F 2 "" H 1550 1550 50  0001 C CNN
+F 3 "" H 1550 1550 50  0001 C CNN
+	1    1550 1550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1550 1400 1550 1550
+Text Notes 2100 1000 0    50   ~ 0
+Vout
+$EndSCHEMATC

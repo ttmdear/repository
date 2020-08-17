@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData">
+    <serverData>
+      <paths name="192.168.140.2">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
+            <mapping local="/opt/arduino-1.8.9/hardware/arduino/avr/cores/arduino/CDC.cpp" web="/" />
+            <mapping local="/opt/arduino-1.8.9/hardware/arduino/avr/cores/arduino/HardwareSerial.cpp" web="/" />
+            <mapping local="/opt/arduino-1.8.9/hardware/arduino/avr/cores/arduino/HardwareSerial0.cpp" web="/" />
+            <mapping local="/opt/arduino-1.8.9/hardware/arduino/avr/cores/arduino/HardwareSerial1.cpp" web="/" />
+            <mapping local="/opt/arduino-1.8.9/hardware/arduino/avr/cores/arduino/HardwareSerial2.cpp" web="/" />
+            <mapping local="/opt/arduino-1.8.9/hardware/arduino/avr/cores/arduino/HardwareSerial3.cpp" web="/" />
+            <mapping local="/opt/arduino-1.8.9/hardware/arduino/avr/cores/arduino/IPAddress.cpp" web="/" />
+            <mapping local="/opt/arduino-1.8.9/hardware/arduino/avr/cores/arduino/PluggableUSB.cpp" web="/" />
+            <mapping local="/opt/arduino-1.8.9/hardware/arduino/avr/cores/arduino/Print.cpp" web="/" />
+            <mapping local="/opt/arduino-1.8.9/hardware/arduino/avr/cores/arduino/Stream.cpp" web="/" />
+            <mapping local="/opt/arduino-1.8.9/hardware/arduino/avr/cores/arduino/Tone.cpp" web="/" />
+            <mapping local="/opt/arduino-1.8.9/hardware/arduino/avr/cores/arduino/USBCore.cpp" web="/" />
+            <mapping local="/opt/arduino-1.8.9/hardware/arduino/avr/cores/arduino/WInterrupts.c" web="/" />
+            <mapping local="/opt/arduino-1.8.9/hardware/arduino/avr/cores/arduino/WMath.cpp" web="/" />
+            <mapping local="/opt/arduino-1.8.9/hardware/arduino/avr/cores/arduino/WString.cpp" web="/" />
+            <mapping local="/opt/arduino-1.8.9/hardware/arduino/avr/cores/arduino/abi.cpp" web="/" />
+            <mapping local="/opt/arduino-1.8.9/hardware/arduino/avr/cores/arduino/hooks.c" web="/" />
+            <mapping local="/opt/arduino-1.8.9/hardware/arduino/avr/cores/arduino/main.cpp" web="/" />
+            <mapping local="/opt/arduino-1.8.9/hardware/arduino/avr/cores/arduino/new.cpp" web="/" />
+            <mapping local="/opt/arduino-1.8.9/hardware/arduino/avr/cores/arduino/wiring.c" web="/" />
+            <mapping local="/opt/arduino-1.8.9/hardware/arduino/avr/cores/arduino/wiring_analog.c" web="/" />
+            <mapping local="/opt/arduino-1.8.9/hardware/arduino/avr/cores/arduino/wiring_digital.c" web="/" />
+            <mapping local="/opt/arduino-1.8.9/hardware/arduino/avr/cores/arduino/wiring_pulse.c" web="/" />
+            <mapping local="/opt/arduino-1.8.9/hardware/arduino/avr/cores/arduino/wiring_shift.c" web="/" />
+            <mapping local="/opt/arduino-1.8.9/libraries/LiquidCrystal/src/LiquidCrystal.cpp" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="ewp-usosweb-remote">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
+            <mapping local="/opt/arduino-1.8.9/hardware/arduino/avr/cores/arduino/CDC.cpp" web="/" />
+            <mapping local="/opt/arduino-1.8.9/hardware/arduino/avr/cores/arduino/HardwareSerial.cpp" web="/" />
+            <mapping local="/opt/arduino-1.8.9/hardware/arduino/avr/cores/arduino/HardwareSerial0.cpp" web="/" />
+            <mapping local="/opt/arduino-1.8.9/hardware/arduino/avr/cores/arduino/HardwareSerial1.cpp" web="/" />
+            <mapping local="/opt/arduino-1.8.9/hardware/arduino/avr/cores/arduino/HardwareSerial2.cpp" web="/" />
+            <mapping local="/opt/arduino-1.8.9/hardware/arduino/avr/cores/arduino/HardwareSerial3.cpp" web="/" />
+            <mapping local="/opt/arduino-1.8.9/hardware/arduino/avr/cores/arduino/IPAddress.cpp" web="/" />
+            <mapping local="/opt/arduino-1.8.9/hardware/arduino/avr/cores/arduino/PluggableUSB.cpp" web="/" />
+            <mapping local="/opt/arduino-1.8.9/hardware/arduino/avr/cores/arduino/Print.cpp" web="/" />
+            <mapping local="/opt/arduino-1.8.9/hardware/arduino/avr/cores/arduino/Stream.cpp" web="/" />
+            <mapping local="/opt/arduino-1.8.9/hardware/arduino/avr/cores/arduino/Tone.cpp" web="/" />
+            <mapping local="/opt/arduino-1.8.9/hardware/arduino/avr/cores/arduino/USBCore.cpp" web="/" />
+            <mapping local="/opt/arduino-1.8.9/hardware/arduino/avr/cores/arduino/WInterrupts.c" web="/" />
+            <mapping local="/opt/arduino-1.8.9/hardware/arduino/avr/cores/arduino/WMath.cpp" web="/" />
+            <mapping local="/opt/arduino-1.8.9/hardware/arduino/avr/cores/arduino/WString.cpp" web="/" />
+            <mapping local="/opt/arduino-1.8.9/hardware/arduino/avr/cores/arduino/abi.cpp" web="/" />
+            <mapping local="/opt/arduino-1.8.9/hardware/arduino/avr/cores/arduino/hooks.c" web="/" />
+            <mapping local="/opt/arduino-1.8.9/hardware/arduino/avr/cores/arduino/main.cpp" web="/" />
+            <mapping local="/opt/arduino-1.8.9/hardware/arduino/avr/cores/arduino/new.cpp" web="/" />
+            <mapping local="/opt/arduino-1.8.9/hardware/arduino/avr/cores/arduino/wiring.c" web="/" />
+            <mapping local="/opt/arduino-1.8.9/hardware/arduino/avr/cores/arduino/wiring_analog.c" web="/" />
+            <mapping local="/opt/arduino-1.8.9/hardware/arduino/avr/cores/arduino/wiring_digital.c" web="/" />
+            <mapping local="/opt/arduino-1.8.9/hardware/arduino/avr/cores/arduino/wiring_pulse.c" web="/" />
+            <mapping local="/opt/arduino-1.8.9/hardware/arduino/avr/cores/arduino/wiring_shift.c" web="/" />
+            <mapping local="/opt/arduino-1.8.9/libraries/LiquidCrystal/src/LiquidCrystal.cpp" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+  </component>
+</project>

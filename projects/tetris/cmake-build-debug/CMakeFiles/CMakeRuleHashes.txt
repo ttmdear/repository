@@ -1,0 +1,4 @@
+# Hashes of file build rules.
+aec6db60040a0abd8593a4aacf8e5455 CMakeFiles/tetris-size
+0276b96e932422b3ba6fbfdf66a0ae86 CMakeFiles/tetris-upload
+454d04dc6f386781bf92209c08f6a278 tetris_tetris.ino.cpp

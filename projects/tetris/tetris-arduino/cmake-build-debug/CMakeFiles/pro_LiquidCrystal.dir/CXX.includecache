@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/opt/arduino-1.8.9/libraries/LiquidCrystal/src/LiquidCrystal.cpp
+LiquidCrystal.h
+/opt/arduino-1.8.9/libraries/LiquidCrystal/src/LiquidCrystal.h
+stdio.h
+-
+string.h
+-
+inttypes.h
+-
+Arduino.h
+/opt/arduino-1.8.9/libraries/LiquidCrystal/src/Arduino.h
+
+/opt/arduino-1.8.9/libraries/LiquidCrystal/src/LiquidCrystal.h
+inttypes.h
+-
+Print.h
+/opt/arduino-1.8.9/libraries/LiquidCrystal/src/Print.h
+

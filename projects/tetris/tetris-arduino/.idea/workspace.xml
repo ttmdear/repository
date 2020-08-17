@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated>
+      <config projectName="tetris_arduino" targetName="tetris_arduino-upload" />
+      <config projectName="tetris_arduino" targetName="upload" />
+      <config projectName="tetris_arduino" targetName="tetris_arduino" />
+      <config projectName="tetris_arduino" targetName="pro_LiquidCrystal" />
+      <config projectName="tetris_arduino" targetName="tetris_arduino-size" />
+      <config projectName="tetris_arduino" targetName="pro_CORE" />
+    </generated>
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="1c991490-df98-475a-99e6-7ba4cb207e86" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="ProjectId" id="1W1WlX8Zi7UndqmYfWdTImhLh5R" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/include" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="com.vladsch.clionarduinoplugin.settings.ArduinoSerialMonitorConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/include/tetriminos" />
+      <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/boards/pcboard" />
+      <recent name="$PROJECT_DIR$/boards" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/include" />
+      <recent name="$PROJECT_DIR$/src/boards/pcboard" />
+      <recent name="$PROJECT_DIR$/src/boards/arduinoboard" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/boards/arduinoboard" />
+    </key>
+  </component>
+  <component name="RunManager" selected="CMake Application.upload">
+    <configuration name="pro_CORE" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="tetris_arduino" TARGET_NAME="pro_CORE" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="pro_LiquidCrystal" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="tetris_arduino" TARGET_NAME="pro_LiquidCrystal" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="tetris_arduino-size" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="tetris_arduino" TARGET_NAME="tetris_arduino-size" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="tetris_arduino-upload" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="tetris_arduino" TARGET_NAME="tetris_arduino-upload" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="tetris_arduino" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="tetris_arduino" TARGET_NAME="tetris_arduino" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="tetris_arduino" RUN_TARGET_NAME="tetris_arduino">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="upload" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="tetris_arduino" TARGET_NAME="upload" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="tetris_arduino" RUN_TARGET_NAME="tetris_arduino">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="CMake Application.pro_CORE" />
+      <item itemvalue="CMake Application.pro_LiquidCrystal" />
+      <item itemvalue="CMake Application.tetris_arduino-size" />
+      <item itemvalue="CMake Application.tetris_arduino-upload" />
+      <item itemvalue="CMake Application.tetris_arduino" />
+      <item itemvalue="CMake Application.upload" />
+    </list>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1c991490-df98-475a-99e6-7ba4cb207e86" name="Default Changelist" comment="" />
+      <created>1578317732926</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1578317732926</updated>
+      <workItem from="1578317734306" duration="24816000" />
+      <workItem from="1578941673463" duration="9451000" />
+      <workItem from="1579117635522" duration="2903000" />
+      <workItem from="1579436348122" duration="3148000" />
+      <workItem from="1579440940321" duration="22739000" />
+      <workItem from="1583674098813" duration="1814000" />
+      <workItem from="1583676722312" duration="1696000" />
+      <workItem from="1583679339841" duration="1532000" />
+      <workItem from="1583690461224" duration="1578000" />
+      <workItem from="1583698677483" duration="1831000" />
+      <workItem from="1583701283139" duration="1112000" />
+      <workItem from="1583783752316" duration="1543000" />
+      <workItem from="1585268092205" duration="972000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="418" y="182" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1578334512735">
+      <screen x="0" y="0" width="1920" height="1048" />
+    </state>
+    <state x="418" y="182" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1048@0.0.1920.1048" timestamp="1578334512735" />
+    <state x="768" y="243" width="376" height="559" key="#com.intellij.ide.util.MemberChooser" timestamp="1579464367404">
+      <screen x="0" y="0" width="1920" height="1048" />
+    </state>
+    <state x="768" y="243" width="376" height="559" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1048@0.0.1920.1048" timestamp="1579464367404" />
+    <state x="693" y="273" width="526" height="498" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1579453091830">
+      <screen x="0" y="0" width="1920" height="1048" />
+    </state>
+    <state x="693" y="273" width="526" height="498" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1048@0.0.1920.1048" timestamp="1579453091830" />
+    <state x="641" y="248" width="629" height="549" key="#tetris_arduino-upload" timestamp="1583679660782">
+      <screen x="0" y="0" width="1920" height="1048" />
+    </state>
+    <state x="641" y="248" width="629" height="549" key="#tetris_arduino-upload/0.0.1920.1048@0.0.1920.1048" timestamp="1583679660782" />
+    <state x="641" y="248" width="629" height="549" key="#upload" timestamp="1578317825338">
+      <screen x="0" y="0" width="1920" height="1048" />
+    </state>
+    <state x="641" y="248" width="629" height="549" key="#upload/0.0.1920.1048@0.0.1920.1048" timestamp="1578317825338" />
+    <state x="713" y="396" width="486" height="252" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1578336272448">
+      <screen x="0" y="0" width="1920" height="1048" />
+    </state>
+    <state x="713" y="396" width="486" height="252" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1048@0.0.1920.1048" timestamp="1578336272448" />
+    <state x="743" y="282" width="426" height="481" key="FileChooserDialogImpl" timestamp="1579459545801">
+      <screen x="0" y="0" width="1920" height="1048" />
+    </state>
+    <state x="743" y="282" width="426" height="481" key="FileChooserDialogImpl/0.0.1920.1048@0.0.1920.1048" timestamp="1579459545801" />
+    <state width="1878" height="106" key="GridCell.Tab.0.bottom" timestamp="1579464942615">
+      <screen x="0" y="0" width="1920" height="1048" />
+    </state>
+    <state width="1878" height="106" key="GridCell.Tab.0.bottom/0.0.1920.1048@0.0.1920.1048" timestamp="1579464942615" />
+    <state width="1878" height="106" key="GridCell.Tab.0.center" timestamp="1579464942614">
+      <screen x="0" y="0" width="1920" height="1048" />
+    </state>
+    <state width="1878" height="106" key="GridCell.Tab.0.center/0.0.1920.1048@0.0.1920.1048" timestamp="1579464942614" />
+    <state width="1878" height="106" key="GridCell.Tab.0.left" timestamp="1579464942614">
+      <screen x="0" y="0" width="1920" height="1048" />
+    </state>
+    <state width="1878" height="106" key="GridCell.Tab.0.left/0.0.1920.1048@0.0.1920.1048" timestamp="1579464942614" />
+    <state width="1878" height="106" key="GridCell.Tab.0.right" timestamp="1579464942615">
+      <screen x="0" y="0" width="1920" height="1048" />
+    </state>
+    <state width="1878" height="106" key="GridCell.Tab.0.right/0.0.1920.1048@0.0.1920.1048" timestamp="1579464942615" />
+    <state width="1878" height="344" key="GridCell.Tab.1.bottom" timestamp="1579439488694">
+      <screen x="0" y="0" width="1920" height="1048" />
+    </state>
+    <state width="1878" height="344" key="GridCell.Tab.1.bottom/0.0.1920.1048@0.0.1920.1048" timestamp="1579439488694" />
+    <state width="1878" height="344" key="GridCell.Tab.1.center" timestamp="1579439488693">
+      <screen x="0" y="0" width="1920" height="1048" />
+    </state>
+    <state width="1878" height="344" key="GridCell.Tab.1.center/0.0.1920.1048@0.0.1920.1048" timestamp="1579439488693" />
+    <state width="1878" height="344" key="GridCell.Tab.1.left" timestamp="1579439488693">
+      <screen x="0" y="0" width="1920" height="1048" />
+    </state>
+    <state width="1878" height="344" key="GridCell.Tab.1.left/0.0.1920.1048@0.0.1920.1048" timestamp="1579439488693" />
+    <state width="1878" height="344" key="GridCell.Tab.1.right" timestamp="1579439488693">
+      <screen x="0" y="0" width="1920" height="1048" />
+    </state>
+    <state width="1878" height="344" key="GridCell.Tab.1.right/0.0.1920.1048@0.0.1920.1048" timestamp="1579439488693" />
+    <state x="543" y="261" width="1201" height="688" key="IDE.errors.dialog" timestamp="1579460020810">
+      <screen x="0" y="0" width="1920" height="1048" />
+    </state>
+    <state x="543" y="261" width="1201" height="688" key="IDE.errors.dialog/0.0.1920.1048@0.0.1920.1048" timestamp="1579460020810" />
+    <state x="449" y="159" key="SettingsEditor" timestamp="1578318012834">
+      <screen x="0" y="0" width="1920" height="1048" />
+    </state>
+    <state x="449" y="159" key="SettingsEditor/0.0.1920.1048@0.0.1920.1048" timestamp="1578318012834" />
+    <state x="688" y="259" width="1002" height="524" key="StructurePopup" timestamp="1579464843661">
+      <screen x="0" y="0" width="1920" height="1048" />
+    </state>
+    <state x="688" y="259" width="1002" height="524" key="StructurePopup/0.0.1920.1048@0.0.1920.1048" timestamp="1579464843661" />
+    <state x="626" y="351" key="com.intellij.ide.util.TipDialog" timestamp="1585268293818">
+      <screen x="0" y="0" width="1920" height="1048" />
+    </state>
+    <state x="626" y="351" key="com.intellij.ide.util.TipDialog/0.0.1920.1048@0.0.1920.1048" timestamp="1585268293818" />
+    <state x="704" y="169" width="503" height="703" key="refactoring.ChangeSignatureDialog" timestamp="1579464762422">
+      <screen x="0" y="0" width="1920" height="1048" />
+    </state>
+    <state x="704" y="169" width="503" height="703" key="refactoring.ChangeSignatureDialog/0.0.1920.1048@0.0.1920.1048" timestamp="1579464762422" />
+    <state x="623" y="240" key="run.anything.popup" timestamp="1578339171896">
+      <screen x="0" y="0" width="1920" height="1048" />
+    </state>
+    <state x="623" y="240" key="run.anything.popup/0.0.1920.1048@0.0.1920.1048" timestamp="1578339171896" />
+    <state x="623" y="230" width="672" height="678" key="search.everywhere.popup" timestamp="1579458905809">
+      <screen x="0" y="0" width="1920" height="1048" />
+    </state>
+    <state x="623" y="230" width="672" height="678" key="search.everywhere.popup/0.0.1920.1048@0.0.1920.1048" timestamp="1579458905809" />
+    <state x="685" y="438" width="542" height="168" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1579443468453">
+      <screen x="0" y="0" width="1920" height="1048" />
+    </state>
+    <state x="685" y="438" width="542" height="168" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/0.0.1920.1048@0.0.1920.1048" timestamp="1579443468453" />
+  </component>
+</project>
