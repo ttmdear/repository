@@ -1,0 +1,48 @@
+#!/bin/bash
+
+# Declare readonly
+# ------------------------
+declare -r firstName=pawel
+
+# declare: line 6: firstName: readonly variable
+# firstName=gawel
+
+echo $firstName
+
+# Declare interger
+# ------------------------
+declare -i age=12
+
+echo "age: $age"
+
+# Declare array
+# ------------------------
+declare -i names
+
+names[1]=123
+
+# It will be ignore
+# names=12
+
+echo ${names[1]}
+
+# List functions
+# ------------------------
+
+function sum() {
+    echo "a"
+}
+
+# Lista all functions
+declare -f
+
+# List specific function
+declare -f sum
+
+# Export
+# ------------------------
+# This declares a variable as available for exporting outside the environment
+# of the script itself.
+
+declare -x var3=pawel
+
