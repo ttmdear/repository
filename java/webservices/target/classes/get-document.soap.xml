@@ -1,9 +1,0 @@
-<soapenv:Envelope
-        xmlns:doc="http://wb.foo.pl/wbservices/documents"
-        xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
-    <soapenv:Body>
-        <doc:getDocument>
-            <doc:documentId>d5a2f6dd-bc99-442a-bbb6-f9e16710e278</doc:documentId>
-        </doc:getDocument>
-    </soapenv:Body>
-</soapenv:Envelope>
