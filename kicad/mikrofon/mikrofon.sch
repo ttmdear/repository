@@ -1,0 +1,215 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L power:+5V #PWR?
+U 1 1 5F481B40
+P 1200 800
+F 0 "#PWR?" H 1200 650 50  0001 C CNN
+F 1 "+5V" H 1215 973 50  0000 C CNN
+F 2 "" H 1200 800 50  0001 C CNN
+F 3 "" H 1200 800 50  0001 C CNN
+	1    1200 800 
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:Microphone MK?
+U 1 1 5F481EE6
+P 1200 1800
+F 0 "MK?" H 1330 1846 50  0000 L CNN
+F 1 "Microphone" H 1330 1755 50  0000 L CNN
+F 2 "" V 1200 1900 50  0001 C CNN
+F 3 "~" V 1200 1900 50  0001 C CNN
+	1    1200 1800
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5F48235F
+P 1200 2300
+F 0 "#PWR?" H 1200 2050 50  0001 C CNN
+F 1 "GND" H 1205 2127 50  0000 C CNN
+F 2 "" H 1200 2300 50  0001 C CNN
+F 3 "" H 1200 2300 50  0001 C CNN
+	1    1200 2300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1200 2300 1200 2000
+Wire Wire Line
+	1200 1050 1200 800 
+$Comp
+L Device:R R?
+U 1 1 5F482E23
+P 1200 1200
+F 0 "R?" H 1270 1246 50  0000 L CNN
+F 1 "R" H 1270 1155 50  0000 L CNN
+F 2 "" V 1130 1200 50  0001 C CNN
+F 3 "~" H 1200 1200 50  0001 C CNN
+	1    1200 1200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1200 1600 1200 1350
+$Comp
+L Device:Q_NJFET_DGS Q1_JFET
+U 1 1 5F484B53
+P 3600 1750
+F 0 "Q1_JFET" H 3790 1750 50  0000 L CNN
+F 1 "Q1" H 3790 1705 50  0001 L CNN
+F 2 "" H 3800 1850 50  0001 C CNN
+F 3 "~" H 3600 1750 50  0001 C CNN
+	1    3600 1750
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:Microphone_Condenser MK1
+U 1 1 5F485907
+P 3300 2050
+F 0 "MK1" H 3430 2096 50  0000 L CNN
+F 1 "Microphone_Condenser" H 2300 1850 50  0001 L CNN
+F 2 "" V 3300 2150 50  0001 C CNN
+F 3 "~" V 3300 2150 50  0001 C CNN
+	1    3300 2050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3700 1950 3700 2350
+Wire Wire Line
+	3300 2250 3300 2350
+Wire Wire Line
+	3300 2350 3700 2350
+Connection ~ 3700 2350
+Wire Wire Line
+	3300 1850 3300 1750
+Wire Wire Line
+	3300 1750 3400 1750
+Wire Wire Line
+	3700 1550 3700 1350
+Wire Wire Line
+	3700 1350 3850 1350
+Connection ~ 3850 1350
+Wire Wire Line
+	3850 1350 4050 1350
+Text GLabel 4050 1350 2    50   Input ~ 0
+OUT
+$Comp
+L power:GND #PWR?
+U 1 1 5F493871
+P 3700 2600
+F 0 "#PWR?" H 3700 2350 50  0001 C CNN
+F 1 "GND" H 3705 2427 50  0000 C CNN
+F 2 "" H 3700 2600 50  0001 C CNN
+F 3 "" H 3700 2600 50  0001 C CNN
+	1    3700 2600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3700 2350 3700 2600
+$Comp
+L Device:Q_NJFET_DGS Q1_JFET?
+U 1 1 5F498637
+P 5200 1750
+F 0 "Q1_JFET?" H 5390 1750 50  0000 L CNN
+F 1 "Q1" H 5390 1705 50  0001 L CNN
+F 2 "" H 5400 1850 50  0001 C CNN
+F 3 "~" H 5200 1750 50  0001 C CNN
+	1    5200 1750
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:Microphone_Condenser MK?
+U 1 1 5F49863D
+P 4900 2050
+F 0 "MK?" H 5030 2096 50  0000 L CNN
+F 1 "Microphone_Condenser" H 3900 1850 50  0001 L CNN
+F 2 "" V 4900 2150 50  0001 C CNN
+F 3 "~" V 4900 2150 50  0001 C CNN
+	1    4900 2050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5300 1950 5300 2350
+Wire Wire Line
+	4900 2250 4900 2350
+Wire Wire Line
+	4900 2350 5300 2350
+Connection ~ 5300 2350
+Wire Wire Line
+	4900 1850 4900 1750
+Wire Wire Line
+	4900 1750 5000 1750
+Wire Wire Line
+	5300 1550 5300 1350
+Wire Wire Line
+	5300 1350 5450 1350
+Connection ~ 5450 1350
+Wire Wire Line
+	5450 1350 5650 1350
+$Comp
+L power:+5V VCC
+U 1 1 5F49864D
+P 5450 900
+F 0 "VCC" H 5400 1100 50  0000 L CNN
+F 1 "+5V" H 5465 1073 50  0001 C CNN
+F 2 "" H 5450 900 50  0001 C CNN
+F 3 "" H 5450 900 50  0001 C CNN
+	1    5450 900 
+	1    0    0    -1  
+$EndComp
+Text GLabel 5650 1350 2    50   Input ~ 0
+OUT
+$Comp
+L power:GND #PWR?
+U 1 1 5F498654
+P 5300 2600
+F 0 "#PWR?" H 5300 2350 50  0001 C CNN
+F 1 "GND" H 5305 2427 50  0000 C CNN
+F 2 "" H 5300 2600 50  0001 C CNN
+F 3 "" H 5300 2600 50  0001 C CNN
+	1    5300 2600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5300 2350 5300 2600
+Wire Wire Line
+	5450 900  5450 950 
+Wire Wire Line
+	5450 1250 5450 1350
+$Comp
+L Device:R R1
+U 1 1 5F49865D
+P 5450 1100
+F 0 "R1" H 5520 1146 50  0000 L CNN
+F 1 "10k" H 5520 1055 50  0000 L CNN
+F 2 "" V 5380 1100 50  0001 C CNN
+F 3 "~" H 5450 1100 50  0001 C CNN
+	1    5450 1100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3850 900  3850 1350
+$Comp
+L power:+5V VCC
+U 1 1 5F48F328
+P 3850 900
+F 0 "VCC" H 3800 1100 50  0000 L CNN
+F 1 "+5V" H 3865 1073 50  0001 C CNN
+F 2 "" H 3850 900 50  0001 C CNN
+F 3 "" H 3850 900 50  0001 C CNN
+	1    3850 900 
+	1    0    0    -1  
+$EndComp
+$EndSCHEMATC
