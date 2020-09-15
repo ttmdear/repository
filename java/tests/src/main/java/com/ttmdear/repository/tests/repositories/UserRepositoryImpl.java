@@ -1,4 +1,4 @@
-package com.ttmdear.repository.tests.repositories.impl;
+package com.ttmdear.repository.tests.repositories;
 
 import com.ttmdear.repository.tests.domain.User;
 import com.ttmdear.repository.tests.domain.UserStatus;
@@ -29,7 +29,7 @@ public class UserRepositoryImpl implements UserRepository {
     public User findById(String id) {
         User userById = null;
 
-        for(User user: users) {
+        for (User user : users) {
             if (user.getId().equals(id)) {
                 userById = user;
             }

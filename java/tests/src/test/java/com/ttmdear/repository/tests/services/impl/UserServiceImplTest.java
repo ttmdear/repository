@@ -4,6 +4,7 @@ import com.ttmdear.repository.tests.domain.User;
 import com.ttmdear.repository.tests.domain.UserStatus;
 import com.ttmdear.repository.tests.repositories.UserRepository;
 import com.ttmdear.repository.tests.services.UserService;
+import com.ttmdear.repository.tests.services.UserServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.ArgumentCaptor;

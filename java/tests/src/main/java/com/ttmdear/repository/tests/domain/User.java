@@ -10,12 +10,10 @@ import javax.persistence.*;
 @Entity
 public class User {
 
+    private String firstName;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private String id;
-
-    private String firstName;
-
     private String lastName;
 
     @Enumerated(value = EnumType.STRING)

@@ -1,21 +1,15 @@
 package com.ttmdear.repository.tests.controllers;
 
-import com.ttmdear.repository.tests.controllers.IndexController;
 import com.ttmdear.repository.tests.repositories.UserRepository;
-import com.ttmdear.repository.tests.repositories.impl.UserRepositoryImpl;
+import com.ttmdear.repository.tests.repositories.UserRepositoryImpl;
 import com.ttmdear.repository.tests.services.UserService;
-import com.ttmdear.repository.tests.services.impl.UserServiceImpl;
+import com.ttmdear.repository.tests.services.UserServiceImpl;
 import org.hamcrest.core.IsEqual;
-import org.junit.Before;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
-import org.springframework.test.web.servlet.RequestBuilder;
-import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
-import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;

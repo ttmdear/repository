@@ -1,4 +1,4 @@
-package com.ttmdear.repository.tests.services.impl;
+package com.ttmdear.repository.tests.services;
 
 import com.ttmdear.repository.tests.domain.User;
 import com.ttmdear.repository.tests.domain.UserStatus;
@@ -17,6 +17,13 @@ public class UserServiceImpl implements UserService {
         this.userRepository = userRepository;
     }
 
+    @Override
+    public void active(User user) {
+        user.setStatus(UserStatus.ACTIVE);
+
+        userRepository.save(user);
+    }
+
     public Set<User> find() {
         return userRepository.findAll();
     }
@@ -24,12 +31,5 @@ public class UserServiceImpl implements UserService {
     @Override
     public User findById(String id) {
         return userRepository.findById(id);
-    }
-
-    @Override
-    public void active(User user) {
-        user.setStatus(UserStatus.ACTIVE);
-
-        userRepository.save(user);
     }
 }

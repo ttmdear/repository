@@ -12,9 +12,14 @@ import org.springframework.web.bind.annotation.*;
 public class IndexController {
     private final UserService userService;
 
-    private String test;
     public IndexController(UserService userService) {
         this.userService = userService;
+    }
+
+    @GetMapping("/users/{id}")
+    @ResponseBody
+    public User getUser(Model model, @PathVariable("id") String id) {
+        return userService.findById(id);
     }
 
     @RequestMapping({"", "/"})
@@ -22,11 +27,5 @@ public class IndexController {
         model.addAttribute("users", userService.find());
 
         return "index";
-    }
-
-    @GetMapping("/users/{id}")
-    @ResponseBody
-    public User getUser(Model model, @PathVariable("id") String id) {
-        return userService.findById(id);
     }
 }
