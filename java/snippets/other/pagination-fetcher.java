@@ -1,4 +1,7 @@
-package com.pentacomp.ezamowienia.mo.importer.util;
+/**
+ * Przykad klasy iteratora do pobierania danych zestronicowanych. Samo
+ * pobieranie danych jest delefowane na zewnątrz przez wywołanie Function.
+ */
 
 import java.util.Iterator;
 import java.util.function.Function;
