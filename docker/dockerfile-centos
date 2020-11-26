@@ -1,0 +1,99 @@
+FROM centos:7.8.2003
+
+ARG SOZ_VERSION
+ARG SOZ_DATE
+ARG SOZ_COMMIT
+
+LABEL Maintainer="admin <admin@example.com>" \
+  Description="SOZ $SOZ_VERSION" \
+  Version="$SOZ_VERSION"
+
+ARG IBV
+ARG IBD
+
+##
+# centos7.x
+##
+RUN rpm --import /etc/pki/rpm-gpg/* && \
+  yum -y update && \
+  yum -y install net-tools iproute nmap lsof telnet git curl wget bind-utils && \
+  yum clean all
+
+RUN mkdir -p /cmd-setup.d /version.d
+ADD centos7/scripts/010-version.sh centos7/scripts/012-environment.sh /cmd-setup.d/
+
+##
+# centos7.x-httpd
+##
+RUN yum -y install httpd mod_ssl && yum clean all
+
+ADD centos7-httpd/scripts/cmd-httpd.sh /
+
+CMD ["/cmd-httpd.sh"]
+
+#HEALTHCHECK CMD curl -f http://127.0.0.1/health.cgi || exit 1
+
+##
+# centos7.x-bugzilla
+##
+ENV PERL_LOCAL_LIB_ROOT /usr/local/perl-bugzilla
+ENV PERL5LIB /usr/local/perl-bugzilla/lib/perl5
+ENV PATH /usr/local/perl-bugzilla/bin:$PATH
+
+RUN yum -y -q install postgresql-devel mariadb mariadb-devel \
+   gd-devel graphviz perl-core perl-App-cpanminus \
+  'perl(Authen::SASL)' 'perl(CGI)' 'perl(DateTime)' 'perl(DateTime::TimeZone)' 'perl(DBI)' \
+  'perl(Digest::SHA)' 'perl(GD)' 'perl(HTML::FormatText::WithLinks)' 'perl(HTML::Parser)' \
+  'perl(List::MoreUtils)' 'perl(Encode::Detect)' 'perl(Template)' 'perl(Test::Taint)' \
+  'perl(URI)' 'perl(XML::Twig)' 'perl(File::Copy::Recursive)' 'perl(DBD::mysql)' && \
+  yum clean all
+
+RUN yum -c http://repo/sw/opensource/apache-perl/yum-mod_perl.repo -y install mod_perl
+
+RUN curl -sS -L -k -f http://repo/sw/opensource/bugzilla/bin/perl-bugzilla-latest.tar.gz | \
+  tar xzf - -C /usr/local && \
+  chown -R root:root /usr/local/perl-bugzilla
+
+RUN mkdir -p /usr/local/bugzilla && \
+  curl -sS -L -k -f http://repo/sw/opensource/bugzilla/src/bugzilla-5.1.2.tar.gz | \
+  tar xzf - -C /usr/local/bugzilla --strip-components=1 && \
+  chown -R root:root /usr/local/bugzilla
+
+RUN curl -sS -L -k -f -I http://repo/sw/opensource/bugzilla/bin/bugzilla-pl-latest.tar.gz \
+  && (curl -sS -L -k -f http://repo/sw/opensource/bugzilla/bin/bugzilla-pl-latest.tar.gz | tar xzf - -C /usr/local && \
+      mkdir /usr/local/bugzilla/template/pl && \
+      ln -snf /usr/local/bugzilla-pl/template/pl/default /usr/local/bugzilla/template/pl) \
+  || (echo Bugzilla PL not available)
+
+ADD centos7-bugzilla/config/index.html /var/www/html
+ADD centos7-bugzilla/config/8*.conf /etc/httpd/conf.d/
+ADD centos7-bugzilla/config/checksetup_answers.txt /usr/local/bugzilla
+ADD centos7-bugzilla/scripts/*.sh /cmd-setup.d/
+ADD centos7-bugzilla/scripts-bz/*.pl /usr/local/bin/
+
+VOLUME /usr/local/bugzilla/data
+
+RUN mkdir -p /version.d && echo -e "ImageBuildVersion: $IBV\nImageBuildDate: $IBD" > /version.d/030-version-centos7.x-bugzilla.txt; \
+  [[ -f /usr/local/perl-bugzilla/VERSION.txt ]] && cp /usr/local/perl-bugzilla/VERSION.txt /version.d/032-version-perl-bugzilla.txt || echo Bugzilla perl version not available; \
+  [[ -d /usr/local/bugzilla/.git ]] && echo GitCommit: $(git --git-dir /usr/local/bugzilla/.git log --pretty=format:"commit=%h, date=%ai, author=%an" -n 1) >> /version.d/034-version-bugzilla.txt || echo Bugzilla version not available; \
+  [[ -f /usr/local/bugzilla-pl/VERSION.txt ]] && cp /usr/local/bugzilla-pl/VERSION.txt /version.d/036-version-bugzilla-pl.txt || echo Bugzilla PL version not available
+
+##
+# centos7.x-soz
+##
+ADD centos7-soz/scripts/*.sh /cmd-setup.d/
+
+RUN mkdir -p /perl_scripts /config/bugzilla
+
+ADD centos7-soz/scripts/*.pl /perl_scripts/
+
+ADD centos7-soz/config/*.conf /config/
+
+ADD centos7-soz/config/soz-answers.txt /config/
+
+ADD centos7-soz/config/bugzilla /config/bugzilla
+
+ADD centos7-soz/config/ssl.conf /etc/httpd/conf.d/
+
+RUN echo -e "ImageBuildDate: $IBD" > /version.d/040-version-soz.txt; \
+  echo -e "SOZ-Version: $SOZ_VERSION\nSOZ-Date: $SOZ_DATE\nGitCommit: $SOZ_COMMIT" > /version.d/041-version-soz.txt;
