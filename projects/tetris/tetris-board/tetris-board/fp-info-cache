@@ -1,4 +1,4 @@
-18374714128636098
+18373217471608599
 Battery
 BatteryHolder_Bulgin_BX0036_1xC
 Bulgin Battery Holder, BX0036, Battery Type C (https://www.bulgin.com/products/pub/media/bulgin/data/Battery_holders.pdf)
@@ -54949,6 +54949,13 @@ solder jumper open
 0
 5
 3
+LCD
+1602A
+
+
+0
+16
+16
 LED_SMD
 LED-APA102-2020
 http://www.led-color.com/upload/201604/APA102-2020%20SMD%20LED.pdf
@@ -57889,55 +57896,34 @@ DIL DIP PDIP 2.54mm 7.62mm 300mil
 0
 4
 4
-Own_Arduino
-Promini
-
-
-0
-29
-29
-Own_definitions
-1602A
-
-
-0
-16
-16
-Own_definitions
-Button_Switch_2x3_2.54mm
+Own_Contractors
+RSM954N
 
 
 0
 6
-3
-Own_definitions
-DG301-5.0-2P-1X
-
-
-0
-2
-2
-Own_definitions
-DG301-5.0-3P-1X
-
-
-0
-3
-3
-Own_definitions
-Promini
+5
+Own_Modules
+Arduino_Pro_Mini
 
 
 0
 29
 29
-Own_definitions
-TOM2058AMA-B
+Own_Modules
+RF_RX_433MHz
 
 
 0
-14
-14
+4
+4
+Own_Modules
+XL6009
+
+
+0
+4
+4
 Package_BGA
 Analog_BGA-28_4.0x6.25mm_Layout4x7_P0.8mm_Ball0.45mm_Pad0.4
 Analog BGA-28 4.0mm x 6.25mm package, pitch 0.4mm pad, based on https://www.analog.com/media/en/technical-documentation/data-sheets/8063fa.pdf
@@ -80926,3 +80912,10 @@ varistor SIOV
 0
 2
 2
+tetris-board
+TOM2058AMA-B
+
+
+0
+14
+14

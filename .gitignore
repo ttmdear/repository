@@ -1,4 +1,5 @@
 .idea
+.mvn
+java/**/*.iml
 java/**/.idea
 java/**/target
-java/**/*.iml

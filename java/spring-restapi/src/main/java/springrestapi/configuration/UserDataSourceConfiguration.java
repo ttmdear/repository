@@ -45,26 +45,6 @@ public class UserDataSourceConfiguration {
         return em;
     }
 
-    // @Bean
-    // public LocalContainerEntityManagerFactoryBean productEntityManager() {
-    //     LocalContainerEntityManagerFactoryBean em
-    //         = new LocalContainerEntityManagerFactoryBean();
-    //     em.setDataSource(productDataSource());
-    //     em.setPackagesToScan(
-    //         new String[] { "com.baeldung.multipledb.model.product" });
-
-    //     HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
-    //     em.setJpaVendorAdapter(vendorAdapter);
-    //     HashMap<String, Object> properties = new HashMap<>();
-    //     properties.put("hibernate.hbm2ddl.auto",
-    //         env.getProperty("hibernate.hbm2ddl.auto"));
-    //     properties.put("hibernate.dialect",
-    //         env.getProperty("hibernate.dialect"));
-    //     em.setJpaPropertyMap(properties);
-
-    //     return em;
-    // }
-
     @Bean
     public PlatformTransactionManager userTransactionManager() {
         JpaTransactionManager transactionManager = new JpaTransactionManager();

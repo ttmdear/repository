@@ -1,0 +1,74 @@
+openapi: 3.0.0
+info:
+  title: Users API
+  version: 1.0.0
+  description: API to operate on users
+  contact:
+    email: bobryk.pawel@gmail.com
+    name: Paweł Bobryk
+  license:
+    name: MIT
+paths:
+  /users:
+    post:
+      description: Create user
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: string
+                firstName:
+                  type: string
+                lastName:
+                  type: string
+                email:
+                  type: string
+                login:
+                  type: string
+              required: 
+                - firstName
+                - lastName
+                - email
+              
+      responses:
+        '201':
+          description: User was created
+  /users/{id}:
+    get:
+      parameters: 
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Return user with given ID
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+          
+components:
+  schemas:
+    User:
+      properties:
+        id:
+          type: string
+        firstName:
+          type: string
+        lastName:
+          type: string
+        email:
+          type: string
+        login:
+          type: string
+      # Both properties are required
+      required:
+        - id
+        - firstName
+        - lastName

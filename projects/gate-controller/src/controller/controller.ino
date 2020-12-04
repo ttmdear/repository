@@ -189,6 +189,12 @@ void GateController::setContactors(bool open, bool close) {
 void GateController::process() {
     rc->process();
 
+    // debug("isHigh(pio.limitOpen)", isHigh(pio.limitOpen));
+    // debug("isHigh(pio.limitClose)", isHigh(pio.limitClose));
+    // debug("isHigh(pio.open)", isHigh(pio.open));
+    // debug("isHigh(pio.close)", isHigh(pio.close));
+    // debug("isHigh(pio.stop)", isHigh(pio.stop));
+
     if (isHigh(pio.limitOpen)) {
         state = STATE_OPENNED;
     } else if (isHigh(pio.limitClose)) {
@@ -221,7 +227,7 @@ void GateController::process() {
         state = STATE_STOPPED;
     }
 
-    Serial.print("state ");Serial.println(resolveState(state));
+    debug("state", resolveState(state));
 
     switch(state) {
         case STATE_OPENNED:
@@ -293,29 +299,22 @@ RemoteController::RemoteController(int pin, int signalPin) {
 
 void RemoteController::process() {
 
+    dataLength = VW_MAX_MESSAGE_LEN;
+
     if(vw_get_message(data, &dataLength)) {
+        Serial.print("dataLength  ");Serial.println(dataLength);
         memset(command, 0, sizeof(command));
 
-        // digitalWrite(signalPin, HIGH);
-
         for(int i = 0; i < dataLength; i++) {
-            // Serial.println((char)data[i]);
-
-            // strcat(command, data[i]);
             command[i] = data[i];
         }
 
-        // command[dataLength + 1] = 0;
 
         Serial.print("get ");Serial.println(command);
-
-        // digitalWrite(signalPin, LOW);
     }
 }
 
 bool RemoteController::isOpenCommand() {
-    // Serial.print("isOpenCommand ");Serial.print(command);Serial.print(" -> ");Serial.println(command == "open");
-
     return strcmp(command, "open") == 0;
 }
 
@@ -361,5 +360,3 @@ void loop() {
 
     delay(1000);
 }
-
-
