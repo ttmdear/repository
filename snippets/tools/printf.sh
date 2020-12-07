@@ -1,0 +1,1 @@
+printf "decimal : %d, \noctal : %o, \nhexadecimal : %x, \nfloating : %f" 10 10 10 10

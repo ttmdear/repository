@@ -1,0 +1,1 @@
+mysql -u usosweb -p -h localhost
