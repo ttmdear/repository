@@ -1,7 +1,0 @@
-/home/thinkpad/workspace/tetris/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/thinkpad/workspace/tetris/cmake-build-debug/CMakeFiles/tetris.dir
-/home/thinkpad/workspace/tetris/cmake-build-debug/CMakeFiles/uno_CORE.dir
-/home/thinkpad/workspace/tetris/cmake-build-debug/CMakeFiles/tetris-size.dir
-/home/thinkpad/workspace/tetris/cmake-build-debug/CMakeFiles/tetris-upload.dir
-/home/thinkpad/workspace/tetris/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/thinkpad/workspace/tetris/cmake-build-debug/CMakeFiles/upload.dir

@@ -1,5 +1,0 @@
-(fp_lib_table
-  (lib (name tetris-board)(type KiCad)(uri ${KIPRJMOD}/tetris-board.pretty)(options "")(descr ""))
-  (lib (name arduino)(type KiCad)(uri /home/thinkpad/workspace/tetris/tetris-board/arduino.pretty)(options "")(descr ""))
-  (lib (name LCD)(type KiCad)(uri ${KIPRJMOD}/LCD.pretty)(options "")(descr ""))
-)

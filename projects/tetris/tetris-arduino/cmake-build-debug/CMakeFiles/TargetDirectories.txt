@@ -1,8 +1,0 @@
-/home/thinkpad/workspace/tetris/tetris-arduino/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/thinkpad/workspace/tetris/tetris-arduino/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/thinkpad/workspace/tetris/tetris-arduino/cmake-build-debug/CMakeFiles/pro_LiquidCrystal.dir
-/home/thinkpad/workspace/tetris/tetris-arduino/cmake-build-debug/CMakeFiles/pro_CORE.dir
-/home/thinkpad/workspace/tetris/tetris-arduino/cmake-build-debug/CMakeFiles/tetris_arduino.dir
-/home/thinkpad/workspace/tetris/tetris-arduino/cmake-build-debug/CMakeFiles/tetris_arduino-size.dir
-/home/thinkpad/workspace/tetris/tetris-arduino/cmake-build-debug/CMakeFiles/tetris_arduino-upload.dir
-/home/thinkpad/workspace/tetris/tetris-arduino/cmake-build-debug/CMakeFiles/upload.dir

@@ -1,2 +1,0 @@
-compiler-file17330507201206020920.o: \
- /tmp/compiler-file17330507201206020920

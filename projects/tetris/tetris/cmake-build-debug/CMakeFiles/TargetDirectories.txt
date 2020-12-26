@@ -1,3 +1,0 @@
-/home/thinkpad/workspace/tetris/tetris/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/thinkpad/workspace/tetris/tetris/cmake-build-debug/CMakeFiles/tetris_led.dir
-/home/thinkpad/workspace/tetris/tetris/cmake-build-debug/CMakeFiles/edit_cache.dir

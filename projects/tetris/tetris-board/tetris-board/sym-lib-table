@@ -1,5 +1,0 @@
-(sym_lib_table
-  (lib (name TOM2058AMA-B)(type Legacy)(uri ${KIPRJMOD}/TOM2058AMA-B.lib)(options "")(descr ""))
-  (lib (name Arduino)(type Legacy)(uri ${KIPRJMOD}/Arduino.lib)(options "")(descr ""))
-  (lib (name LCD)(type Legacy)(uri ${KIPRJMOD}/LCD.lib)(options "")(descr ""))
-)

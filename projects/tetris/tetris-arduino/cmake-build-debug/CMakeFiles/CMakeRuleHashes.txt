@@ -1,3 +1,0 @@
-# Hashes of file build rules.
-3c60e9448ab2c631543833dd2bb74456 CMakeFiles/tetris_arduino-size
-71190f9128d92b159a3ec2319c028055 CMakeFiles/tetris_arduino-upload

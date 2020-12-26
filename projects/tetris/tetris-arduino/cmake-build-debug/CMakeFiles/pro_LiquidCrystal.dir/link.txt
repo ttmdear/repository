@@ -1,2 +1,0 @@
-/opt/arduino-1.8.9/hardware/tools/avr/bin/avr-ar qc libpro_LiquidCrystal.a  CMakeFiles/pro_LiquidCrystal.dir/opt/arduino-1.8.9/libraries/LiquidCrystal/src/LiquidCrystal.cpp.obj
-/opt/arduino-1.8.9/hardware/tools/avr/bin/avr-ranlib libpro_LiquidCrystal.a

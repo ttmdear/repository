@@ -1,7 +1,0 @@
-#ifndef TETRIS_ARDUINO_BOARD_H
-#define TETRIS_ARDUINO_BOARD_H
-
-#define BOARD_ARDUINO 1
-// define PC_BOARD 0
-
-#endif //TETRIS_ARDUINO_BOARD_H

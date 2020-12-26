@@ -1,2 +1,0 @@
-compiler-file10130969126799455796.o: \
- /tmp/compiler-file10130969126799455796
