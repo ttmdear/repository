@@ -1,3 +1,0 @@
-(sym_lib_table
-  (lib (name gate-controller-rescue)(type Legacy)(uri ${KIPRJMOD}/gate-controller-rescue.lib)(options "")(descr ""))
-)

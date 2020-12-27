@@ -1,5 +1,5 @@
 /**
- * Przykład tworzenia pliku
+ * Przykład tworzenia pliku.
  */
 
 import java.io.File;
