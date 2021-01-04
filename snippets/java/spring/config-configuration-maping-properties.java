@@ -3,22 +3,50 @@
  */
 
 generator:
-  validation:
-    required-notice-data: BT-08,BT-11,BT-10
-    required-notice-list-data: BT-500,BT-501,BT-510,BT-513,BT-514,BT-507
+  types:
+    ogl_o_kon:
+      versions:
+        - 1.0.0
+    ogl_o_konc:
+      versions:
+        - 1.0.0
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
-@Getter
-@Setter
-@ConfigurationProperties(prefix = "generator")
+import javax.annotation.PostConstruct;
+
+import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.context.annotation.Configuration;
+
 @Configuration
+@ConfigurationProperties(prefix = "generator")
+@Data
 public class GeneratorConfig {
-    private ValidationConfig validation;
-
     @Getter
     @Setter
-    public static class ValidationConfig {
-        private List<String> requiredNoticeData;
-        private List<String> requiredNoticeListData;
+    private Map<TypeEnum, TypeConfig> types = new HashMap<>();
+
+    public GeneratorConfig() {
+    }
+
+    @PostConstruct
+    public void postContruct() {
+        types.forEach((type, typeConfig) -> {
+            if (typeConfig.getVersions() == null || typeConfig.getVersions().isEmpty()) {
+                throw new RuntimeException(String.format("Please set at least one version for type '%s'.", type));
+            }
+        });
+    }
+
+    @Data
+    public static class TypeConfig {
+        private String version;
+        private List<String> versions = new ArrayList<>();
     }
 }
