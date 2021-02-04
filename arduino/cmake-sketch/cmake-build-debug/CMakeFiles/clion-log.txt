@@ -1,0 +1,8 @@
+/opt/clion-2019.3.2/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/thinkpad/repository/arduino/cmake-sketch
+AVR_BIN: /opt/arduino-1.8.9/hardware/tools/avr/bin
+CMAKE_SOURCE_DIR : /home/thinkpad/repository/arduino/cmake-sketch
+CMAKE_BINARY_DIR : /home/thinkpad/repository/arduino/cmake-sketch/cmake-build-debug
+path: /opt/arduino-1.8.9/hardware/tools/avr/avr/include/avr/io.h
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/thinkpad/repository/arduino/cmake-sketch/cmake-build-debug

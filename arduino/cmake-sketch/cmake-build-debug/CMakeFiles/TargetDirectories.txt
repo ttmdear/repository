@@ -1,0 +1,4 @@
+/home/thinkpad/repository/arduino/cmake-sketch/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/thinkpad/repository/arduino/cmake-sketch/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/thinkpad/repository/arduino/cmake-sketch/cmake-build-debug/CMakeFiles/cmake_sketch.dir
+/home/thinkpad/repository/arduino/cmake-sketch/cmake-build-debug/CMakeFiles/upload.dir

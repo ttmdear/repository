@@ -22,3 +22,9 @@ keytool -delete -alias usos-idp-encryption -keystore "$JAVA_HOME\jre\lib\securit
 keytool -delete -alias usos-idp-signing -keystore "$JAVA_HOME\jre\lib\security\cacerts" -storepass changeit
 keytool -delete -alias usos-rootCA -keystore "$JAVA_HOME\jre\lib\security\cacerts" -storepass changeit
 
+
+## Pozostałe
+keytool -list -keystore client.jks
+
+keytool -v -importkeystore -srcstoretype PKCS12 -srckeystore client.p12 -destkeystore client.jks -destalias nowy3
+keytool -v -keystore client.jks -importcert -alias cert -file client-cert-chain.pem
