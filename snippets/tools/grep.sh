@@ -1,3 +1,8 @@
+# Opcje do polecenia
+# -r przeszukuje rekursywanie wszystki pliki
+# -I pomija pliki binarne
+# -l wyświetla tylko nazwy plików
+
 # Wyszukanie bez wyświetlenie nazw plików.
 grep -hr 'params->get'
 

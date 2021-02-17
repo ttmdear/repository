@@ -1,0 +1,46 @@
+<!--
+    Przykładowa konfiguracja logbacka odkładająca logi do pliku w formie jsona.
+-->
+
+<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+    <springProperty name="appName" source="info.app.name"/>
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <charset>utf8</charset>
+            <pattern>
+                %d{yyyy-MM-dd HH:mm:ss.SSS}:${appName}:${PID}:${HOSTNAME}:%X{UUID} %-5level %thread --- %logger{36} : %msg%n
+            </pattern>
+        </encoder>
+    </appender>
+
+    <!-- Zdefniowany Apppender do pliku -->
+    <appender name="AUDIT-FILE" class="com.mo.importer.auditlogger.service.config.ImmediateFileAppender">
+        <file>logs/audit.log</file>
+        <append>true</append>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>logs/audit.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <maxHistory>30</maxHistory>
+            <totalSizeCap>3GB</totalSizeCap>
+        </rollingPolicy>
+
+        <encoder class="net.logstash.logback.encoder.LogstashEncoder">
+            <includeContext>false</includeContext>
+            <fieldNames>
+                <timestamp>eventDate</timestamp>
+                <version>[ignore]</version>
+                <levelValue>[ignore]</levelValue>
+                <logger>[ignore]</logger>
+                <thread>[ignore]</thread>
+                <message>eventName</message>
+            </fieldNames>
+            <customFields>{"app":"${appName}", "environment":"TEST", "place" : "westeurope"}</customFields>
+        </encoder>
+    </appender>
+    <logger name="audit" level="DEBUG" additivity="false">
+        <appender-ref ref="AUDIT-FILE"/>
+    </logger>
+    <root level="info">
+        <appender-ref ref="CONSOLE"/>
+    </root>
+</configuration>
