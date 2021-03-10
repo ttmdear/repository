@@ -10,3 +10,11 @@ from (
 	from users u
 	group by u.countryId
 ) as base
+
+-- Inny przykład takiego zapytania
+INSERT INTO BN_PROVIDERS_GROUPS_LOGOS
+SELECT
+    BPG.PRGR_ID + 1,
+    BPG.PRGR_ID,
+    PRGR_LOGO
+FROM BN_PROVIDERS_GROUPS BPG

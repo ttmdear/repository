@@ -1,0 +1,33 @@
+<!--
+    Jest to konfiguracja Audit loga.
+-->
+<?xml version="1.0" encoding="utf-8" ?>
+<included>
+    <appender name="AUDIT-FILE" class="com.pentacomp.ezamowienia.mo.importer.auditlogger.service.config.ImmediateFileAppender">
+        <file>logs/audit.log</file>
+        <append>true</append>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!--do ustalenia - aktualnie raz na dzień nowy plik-->
+            <!-- <fileNamePattern>@audit.output.dir@/audit.%d{yyyy-MM-dd}.log</fileNamePattern>-->
+            <fileNamePattern>@audit.output.dir@/${HOSTNAME}-%d{yyyyMMddhhmm}%d{ss, aux}</fileNamePattern>
+            <maxHistory>30</maxHistory>
+            <totalSizeCap>3GB</totalSizeCap>
+        </rollingPolicy>
+
+        <encoder class="net.logstash.logback.encoder.LogstashEncoder">
+            <includeContext>false</includeContext>
+            <fieldNames>
+                <timestamp>eventDate</timestamp>
+                <version>[ignore]</version>
+                <levelValue>[ignore]</levelValue>
+                <logger>[ignore]</logger>
+                <thread>[ignore]</thread>
+                <message>eventName</message>
+            </fieldNames>
+            <customFields>{"app":"${APP_NAME}", "environment":"${RODZAJ_SRODOWISKA}", "place" : "westeurope"}</customFields>
+        </encoder>
+    </appender>
+    <logger name="audit" level="DEBUG" additivity="false">
+        <appender-ref ref="AUDIT-FILE"/>
+    </logger>
+</included>
