@@ -1,0 +1,4 @@
+GET http://localhost:8080/users/d24d4a33-12a0-4c4d-81f0-00172bacb6e2
+Accept: application/json
+
+###

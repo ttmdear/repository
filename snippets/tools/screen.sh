@@ -12,3 +12,6 @@
 # - 'C-a d' odepnie konsolę
 # Pozostałe skróty są w manualu.
 screen /dev/ttyACM0 9600
+
+# Opcja -L powoduje utworzenie pliku screen.# z logiem
+screen -L /dev/ttyACM0 9600

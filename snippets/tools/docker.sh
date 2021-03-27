@@ -17,12 +17,16 @@ docker container stop d818546e9b8d c570c0f2d63d da3136fc674d
 # Uruchomienie polecenia na kontenerze
 docker exec -it 68aa46f7d2c0 bash
 docker exec -it some-mysql bash
+docker exec --interactive --tty 04d8716c1f38 bash
 
 # Wyświetlenie obrazów
 docker image ls
 docker image ls --all
 docker images
 docker images --all
+
+# Wyświetlenie IP kontenera
+docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' 42bd65bb013b
 
 # Usunięcie obrazów
 docker image rm 14e14f585a31 14e14f585a31 883535b5b9b6 db2b37ec6181 db2b37ec6181
@@ -50,14 +54,13 @@ docker run -p 3306:3306 --name wb-db -e MYSQL_ROOT_PASSWORD=wbdb1234 -d wb-db
 docker run wb-db
 
 # Uruchomienie środowiska kontenerów
-docker-compose.exe build
-docker-compose.exe build --no-cache
-docker-compose.exe stop
-docker-compose.exe up
-docker-compose.exe up --build
-docker-compose.exe up --build --no-cahce
-docker-compose.exe up --force-recreate
-docker-compose.exe up --help
-docker-compose.exe up -d
-docker-compose.exe up -d --force-recreate
+docker-compose up --build --force-recreate -d
+docker-compose stop
+docker-compose up --build
+docker-compose up --force-recreate
+docker-compose up -d
+docker-compose up -d --force-recreate
 docker-compose up -d --build mo-noticegen
+
+# Podgląd logów
+docker logs f10f724f34e8
