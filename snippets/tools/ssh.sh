@@ -12,7 +12,7 @@ ssh -p 22 user@server-address
 ssh -p 22 root@192.168.140.2 -t "tail -f /var/log/tomcat8/usosadm"
 ssh -t user@domain.com 'cd /some/path; bash -l'
 
-# Generowanie pary kliczy publiczny i prywatny
+# Generowanie pary kluczy publiczny i prywatny
 ssh-keygen -t rsa -f id_rsa
 
 # Program wygeneruje dwa klucze id_rsa.pub i id_rsa.
