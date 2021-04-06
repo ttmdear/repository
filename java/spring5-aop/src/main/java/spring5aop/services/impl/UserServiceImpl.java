@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
+import spring5aop.aspects.MeasureTime;
 import spring5aop.domain.User;
 import spring5aop.services.UserService;
 
@@ -19,7 +20,14 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    @MeasureTime
     public User findById(String id) {
-        return userList.stream().filter(user -> user.getId().equals(id)).findFirst().get();
+        for(User user: userList) {
+            if (user.getId().equals(id)) {
+                return user;
+            }
+        }
+
+        return null;
     }
 }
