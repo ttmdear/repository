@@ -50,6 +50,13 @@ docker run -it --rm mysql mysql -hsome.mysql.host -usome-mysql-user -p
 docker run -it --rm mysql mysql -uexample-user -p
 docker run -p 3306:3306 --name wb-db -e MYSQL_ROOT_PASSWORD=wbdb1234 -d wb-db
 
+docker run -d --name p1-zm-mongo \
+    -e MONGO_INITDB_ROOT_USERNAME=mongoadmin \
+    -e MONGO_INITDB_ROOT_PASSWORD=secret \
+    -e MONGO_INITDB_DATABASE=test \
+    -p 27017:27017 \
+    mongo:4
+
 # Uruchomienie konkretnego kontenera
 docker run wb-db
 
@@ -64,3 +71,18 @@ docker-compose up -d --build mo-noticegen
 
 # Podgląd logów
 docker logs f10f724f34e8
+
+# Czyszczenie
+# --------------------
+
+# Wyświetlenie wszystkich wolumenów które wiszą.
+docker volume ls -qf dangling=true
+
+# Usunięcie wolumenów które wiszą.
+docker volume rm $(docker volume ls -qf dangling=true)
+
+# Wyświetlenie wszystkich wolumenów
+docker volume ls
+
+# Wyczyszczenie pozostałych niewykorzystywanych zasobów.
+docker system prune
