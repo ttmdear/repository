@@ -1,0 +1,7 @@
+db.history_client.find({
+    $or : [{
+        clientTypeId : 1,
+    }, {
+        clientTypeId : 2,
+    }]
+});

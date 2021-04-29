@@ -1,0 +1,77 @@
+db.getCollection('history_contracts').aggregate([{
+    $lookup : {
+        from : "history_properties",
+        localField : 'propertyId',
+        foreignField : 'id',
+        as : 'property'
+    }
+}, {
+	// samo polecenie lookup powoduje ze zostanie dodany atrybut "property"
+	// jako lista. Poleceniem unwind wybieramy pierwszy element z tej listy.
+
+	//
+    $unwind : "$property"
+}, {
+    $lookup : {
+        from : "history_addresses",
+        localField : 'property.addressId',
+        foreignField : 'id',
+        as : 'address'
+    }
+}, {
+    $lookup : {
+        from : "history_positions",
+        localField : 'property.addressId',
+        foreignField : 'id',
+        as : 'address'
+    }
+}, {
+    $unwind : "$address"
+}, {
+    $limit : 2
+}, {
+    $project : {
+        id : 1,
+        propertyId : 1,
+        completeAddress : '$address.completeAddress'
+    }
+}])
+
+db.getCollection('history_contracts').aggregate([{
+    $lookup : {
+        from : "history_properties",
+		pipeline : [{
+			$match : {
+				name : 'test'
+			}
+		}],
+        as : 'property'
+    }
+}, {
+    $unwind : "$property"
+}, {
+    $lookup : {
+        from : "history_addresses",
+        localField : 'property.addressId',
+        foreignField : 'id',
+        as : 'address'
+    }
+}, {
+    $lookup : {
+        from : "history_positions",
+        localField : 'property.addressId',
+        foreignField : 'id',
+        as : 'address'
+    }
+}, {
+    $unwind : "$address"
+}, {
+    $limit : 2
+}, {
+    $project : {
+        id : 1,
+        propertyId : 1,
+        completeAddress : '$address.completeAddress'
+    }
+}])
+
