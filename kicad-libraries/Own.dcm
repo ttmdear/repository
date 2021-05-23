@@ -1,0 +1,7 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP Switch_A
+D Przełącznik monostabilny. Sześć pinów i biała obramówika. Sam przycisk jest niebieski.
+$ENDCMP
+#
+#End Doc Library
