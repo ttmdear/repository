@@ -1,5 +1,27 @@
-# Listowanie rewizji
+# Konfiguracja
+# --------------------------
+git config --system zmienna wartosc - ustawienia dla kazdego projektu
+git config --global zmienna wartosc - ustawienia dla kazdego projektu
+git config zmienna wartosc - ustawienia dla aktualnego proejktu
+git config --list - odczyt ustawień wszystckich
+git config --list --system - odczyt ustawień --system
+git config --list --global - odczyt ustawień --global
+
+# Rewizje
+# --------------------------
 git show
+git rev-parse --short HEAD # Hasha skrócony ostatniej rewizji
+git rev-parse HEAD # Hash ostatniej rewizji
+
+# Gałęzie
+# --------------------------
+git branch --show-current # Nazwa gałęzi
+
+# DIFF
+# --------------------------
+git diff SHA1 SHA2 # Porównanie określonych rewizji
+git diff --name-only SHA1 SHA2 # Wyświetlenie tylko plików
+git diff kart-3-1 # Porównanie aktualnej wersji z gałęzią
 
 # Usunięcie pliku z repozytorium Gita, ale nie fizycznie.
 git rm --cached pentaid-frontend/idwall/package-lock.json
@@ -12,9 +34,11 @@ git log --graph --oneline
 git config --global alias.tree "log --oneline --decorate --all --graph"
 git tree
 
+# Kod rewizji
+
 # Pozostałe polecenia
 Praca lokalna:
-git init- tworzy puste repo w bieżącym katalogu
+git init - tworzy puste repo w bieżącym katalogu
 git commit [-m 'komunikat commita']- commit poczekalni
 git commit -a [-m 'komunikat commita']- commit śledzonych
 git commit --amend- cofnięcie ostatniej rewizji i jej ponowny    commit - opis + poczekalnia
@@ -101,10 +125,3 @@ git show nazwa_tagu- wyświetla informacje o tagu wraz z rewizjami
 git tag -a nazwa_tagu rewizja- taguje rewizję
 git push nazwa_serwera --tags- wypycha wszystkie tagi na podany serwer
 
-# Konfiguracja:
-git config --system zmienna wartosc - ustawienia dla kazdego projektu
-git config --global zmienna wartosc - ustawienia dla kazdego projektu
-git config zmienna wartosc - ustawienia dla aktualnego proejktu
-git config --list - odczyt ustawień wszystckich
-git config --list --system - odczyt ustawień --system
-git config --list --global - odczyt ustawień --global
