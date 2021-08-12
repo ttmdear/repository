@@ -1,4 +1,4 @@
-package repo.java.annotations;
+package repo.java.annotations.services;
 
 import repo.java.annotations.annotations.AnnotationOnMethod;
 import repo.java.annotations.entities.User;

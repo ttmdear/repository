@@ -1,8 +1,10 @@
 package repo.java.annotations.entities;
 
+import repo.java.annotations.annotations.AnnotationInherited;
 import repo.java.annotations.annotations.AnnotationOnType;
 
 @AnnotationOnType(table = "USER")
+@AnnotationInherited(callLater = true)
 public class User {
     private String id;
     private String name;

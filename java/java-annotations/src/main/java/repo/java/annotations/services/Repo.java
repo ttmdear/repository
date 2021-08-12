@@ -1,4 +1,4 @@
-package repo.java.annotations;
+package repo.java.annotations.services;
 
 public class Repo<T, I> {
 
