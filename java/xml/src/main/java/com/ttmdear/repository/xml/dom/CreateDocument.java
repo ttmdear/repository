@@ -10,30 +10,26 @@ import javax.xml.parsers.ParserConfigurationException;
 import java.util.UUID;
 
 public class CreateDocument {
-    public void run() {
-        try {
-            // Zainicjowanie DocumentBuildera
-            DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
-            documentBuilderFactory.setNamespaceAware(true);
+    public void run() throws ParserConfigurationException {
+        // Zainicjowanie DocumentBuildera
+        DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
+        documentBuilderFactory.setNamespaceAware(true);
 
-            DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
+        DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
 
-            // Utworzenie dokumentu
-            Document document = documentBuilder.newDocument();
+        // Utworzenie dokumentu
+        Document document = documentBuilder.newDocument();
 
-            Element usersElement = document.createElement("users");
-            usersElement.setAttributeNS("http://www.w3.org/2000/xmlns/", "xmlns:foo", "http://foo.com");
+        Element usersElement = document.createElement("users");
+        usersElement.setAttributeNS("http://www.w3.org/2000/xmlns/", "xmlns:foo", "http://foo.com");
 
-            document.appendChild(usersElement);
+        document.appendChild(usersElement);
 
-            usersElement.appendChild(createUserElement(document, "Jan", "Kowalski"));
-            usersElement.appendChild(createUserElement(document, "Krystian", "Wrona"));
-            usersElement.appendChild(createUserElement(document, "Paweł", "Kubal"));
+        usersElement.appendChild(createUserElement(document, "Jan", "Kowalski"));
+        usersElement.appendChild(createUserElement(document, "Krystian", "Wrona"));
+        usersElement.appendChild(createUserElement(document, "Paweł", "Kubal"));
 
-            System.out.println(Util.convertToString(document));
-        } catch (ParserConfigurationException e) {
-            e.printStackTrace();
-        }
+        System.out.println(Util.convertToString(document));
     }
 
     private Element createUserElement(Document document, String firstName, String phone) {
