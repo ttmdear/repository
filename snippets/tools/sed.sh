@@ -3,6 +3,9 @@
 # itp.
 sed -n -E 's/.*"type":"(.*)","data":\[(.*)\],"version":\{"present":false\}\}\]\)/\1/p'
 
+# Wyszukiwania określonej lini
+sed -n '/word/p' input
+
 # Print
 sed -n 1p # Print line 1
 sed -n 1,+2p # Print line 1 and 2 next
