@@ -4,8 +4,10 @@ import org.openjdk.jmh.annotations.Benchmark;
 import org.openjdk.jmh.annotations.BenchmarkMode;
 import org.openjdk.jmh.annotations.Fork;
 import org.openjdk.jmh.annotations.Level;
+import org.openjdk.jmh.annotations.Measurement;
 import org.openjdk.jmh.annotations.Mode;
 import org.openjdk.jmh.annotations.OutputTimeUnit;
+import org.openjdk.jmh.annotations.Param;
 import org.openjdk.jmh.annotations.Scope;
 import org.openjdk.jmh.annotations.Setup;
 import org.openjdk.jmh.annotations.State;
@@ -19,10 +21,11 @@ import java.util.concurrent.TimeUnit;
 public class ListIterateBenchmarks extends BaseBenchmark {
     private List<Integer> numbers;
 
+    @Param({"1000000"})
+    private int size;
+
     @Setup(Level.Invocation)
     public void setUp() {
-        int size = 10000;
-
         numbers = new ArrayList<>(size);
 
         for(int i=0; i < size; i++) {
@@ -31,14 +34,19 @@ public class ListIterateBenchmarks extends BaseBenchmark {
     }
 
     @Benchmark
-    @Fork(value = 1, warmups = 1)
+    @Fork(value = 1)
     @OutputTimeUnit(TimeUnit.NANOSECONDS)
-    @BenchmarkMode(Mode.SingleShotTime)
-    public void testLoopFor() {
-        int sum = 0;
+    @Measurement(iterations = 1)
+    @BenchmarkMode({Mode.Throughput, Mode.SingleShotTime})
+    public int testLoopFor() {
+        int a = 0;
+        int b = 0;
 
         for (Integer number : numbers) {
-            sum += number;
+            a += number;
+            b = b - number + a;
         }
+
+        return a + b;
     }
 }
