@@ -1,5 +1,6 @@
-# Jest to narzędzie głównie wykorzystywane do kopiowania całych partycji. Możemy kopiować jedną partycje na drugą lub
-# partychę do obrazu a potem z obrazu dla partycje.
+# Jest to narzędzie głównie wykorzystywane do kopiowania całych partycji.
+# Możemy kopiować jedną partycje na drugą lub partychę do obrazu a potem z
+# obrazu dla partycje.
 
 # Kopiowanie obrazu na parcyję
 dd if=2020-08-20-raspios-buster-armhf-full.img of=/dev/mmcblk0p1
