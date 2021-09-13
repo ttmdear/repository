@@ -28,7 +28,7 @@ public class ListIterateBenchmarks extends BaseBenchmark {
     public void setUp() {
         numbers = new ArrayList<>(size);
 
-        for(int i=0; i < size; i++) {
+        for (int i = 0; i < size; i++) {
             numbers.add(i);
         }
     }
@@ -43,6 +43,26 @@ public class ListIterateBenchmarks extends BaseBenchmark {
         int b = 0;
 
         for (Integer number : numbers) {
+            a += number;
+            b = b - number + a;
+        }
+
+        return a + b;
+    }
+
+    @Benchmark
+    @Fork(value = 1)
+    @OutputTimeUnit(TimeUnit.NANOSECONDS)
+    @Measurement(iterations = 1)
+    @BenchmarkMode({Mode.Throughput, Mode.SingleShotTime})
+    public int testLoopByIndex() {
+        int a = 0;
+        int b = 0;
+        int size = numbers.size();
+        int number;
+
+        for (int i = 0; i < size; i++) {
+            number = numbers.get(i);
             a += number;
             b = b - number + a;
         }
