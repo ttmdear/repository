@@ -15,11 +15,10 @@ import org.openjdk.jmh.annotations.State;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
-import java.util.function.Consumer;
 
 
 @State(Scope.Benchmark)
-public class ListIterateBenchmarks extends BaseBenchmark {
+public class GetterBenchmark extends BaseBenchmark {
     private List<Integer> numbers;
     private Integer[] numbersArray;
 
@@ -42,24 +41,7 @@ public class ListIterateBenchmarks extends BaseBenchmark {
     @OutputTimeUnit(TimeUnit.SECONDS)
     @Measurement(iterations = 1)
     @BenchmarkMode({Mode.Throughput})
-    public int testLoopFor() {
-        int a = 0;
-        int b = 0;
-
-        for (Integer number : numbers) {
-            a += number;
-            b = b - number + a;
-        }
-
-        return a + b;
-    }
-
-    @Benchmark
-    @Fork(value = 1, warmups = 1)
-    @OutputTimeUnit(TimeUnit.SECONDS)
-    @Measurement(iterations = 1)
-    @BenchmarkMode({Mode.Throughput})
-    public int testLoopByIndex() {
+    public int withWrittenSize() {
         int a = 0;
         int b = 0;
         int size = numbers.size();
@@ -79,14 +61,13 @@ public class ListIterateBenchmarks extends BaseBenchmark {
     @OutputTimeUnit(TimeUnit.SECONDS)
     @Measurement(iterations = 1)
     @BenchmarkMode({Mode.Throughput})
-    public int testLoopArrayByIndex() {
+    public int withCallSizeEachTime() {
         int a = 0;
         int b = 0;
-        int size = numbersArray.length;
         int number;
 
-        for (int i = 0; i < size; i++) {
-            number = numbersArray[i];
+        for (int i = 0; i < numbers.size(); i++) {
+            number = numbers.get(i);
             a += number;
             b = b - number + a;
         }
@@ -99,63 +80,17 @@ public class ListIterateBenchmarks extends BaseBenchmark {
     @OutputTimeUnit(TimeUnit.SECONDS)
     @Measurement(iterations = 1)
     @BenchmarkMode({Mode.Throughput})
-    public int testLoopByEach() {
-        final AB ab = new AB();
+    public int withArray() {
+        int a = 0;
+        int b = 0;
+        int number;
 
-        each(numbers, number -> {
-            ab.a += number;
-            ab.b = ab.b - number + ab.a;
-        });
-
-        return ab.a + ab.b;
-    }
-
-    @Benchmark
-    @Fork(value = 1, warmups = 1)
-    @OutputTimeUnit(TimeUnit.SECONDS)
-    @Measurement(iterations = 1)
-    @BenchmarkMode({Mode.Throughput})
-    public int testLoopByForEach() {
-        final AB ab = new AB();
-
-        numbers.forEach(number -> {
-            ab.a += number;
-            ab.b = ab.b - number + ab.a;
-        });
-
-        return ab.a + ab.b;
-    }
-
-    @Benchmark
-    @Fork(value = 1, warmups = 1)
-    @OutputTimeUnit(TimeUnit.SECONDS)
-    @Measurement(iterations = 1)
-    @BenchmarkMode({Mode.Throughput})
-    public int testLoopByStreamForEach() {
-        final AB ab = new AB();
-
-        numbers.stream().forEach(number -> {
-            ab.a += number;
-            ab.b = ab.b - number + ab.a;
-        });
-
-        return ab.a + ab.b;
-    }
-
-    public static <T> void each(List<T> list, Consumer<T> consumer) {
-        if (list.isEmpty()) {
-            return;
+        for (int i = 0; i < numbersArray.length; i++) {
+            number = numbersArray[i];
+            a += number;
+            b = b - number + a;
         }
 
-        int size = list.size();
-
-        for (int i = 0; i < size; i++) {
-            consumer.accept(list.get(i));
-        }
-    }
-
-    public static class AB {
-        public int a = 0;
-        public int b = 0;
+        return a + b;
     }
 }
