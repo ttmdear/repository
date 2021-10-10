@@ -1,5 +1,5 @@
 # Tworzenie archiwum
 tar -zcvf dump.tar.gz dump/
 
-# rozpakowanie archiwum
+# Rozpakowanie archiwum
 tar -zxvf tar-archive-name.tar.gz
