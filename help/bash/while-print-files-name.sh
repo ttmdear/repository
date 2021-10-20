@@ -17,3 +17,10 @@ for fn in "${array[@]}"
 do
     echo $fn
 done
+
+
+# Loop throught all files
+for FILE in *
+do
+    echo "File is $FILE"
+done

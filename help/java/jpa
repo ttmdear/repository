@@ -1,0 +1,7 @@
+# vi:syntax=bash
+
+# Using query
+
+@Query("select c from CountryEntity c where c.aCd in(:aCdList)")
+List<CountryEntity> findByaCdIn(@Param("aCdList") List<String> aCdList);
+
