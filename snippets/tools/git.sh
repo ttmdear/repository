@@ -22,6 +22,7 @@ git branch --show-current # Nazwa gałęzi
 git diff SHA1 SHA2 # Porównanie określonych rewizji
 git diff --name-only SHA1 SHA2 # Wyświetlenie tylko plików
 git diff kart-3-1 # Porównanie aktualnej wersji z gałęzią
+git diff-tree --no-commit-id --name-only -r a5a8c021 # Wyświetlenie naz plików
 
 # Usunięcie pliku z repozytorium Gita, ale nie fizycznie.
 git rm --cached pentaid-frontend/idwall/package-lock.json

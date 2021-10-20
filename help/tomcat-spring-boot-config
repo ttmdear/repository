@@ -1,0 +1,96 @@
+# vi:syntax=bash
+
+# There are setting for embeded Tomcat
+
+# The most common configuration we may wish to change is the port number:
+
+server.port=80
+
+# If we don't provide the server.port parameter it's set to 8080 by default.  In
+# some cases, we may wish to set a network address to which the server should
+# bind. In other words, we define an IP address where our server will listen:
+
+server.address=my_custom_ip
+
+# By default, the value is set to 0.0.0.0, which allows connection via all IPv4
+# addresses. Setting another value, for example, localhost – 127.0.0.1 – will
+# make the server more selective.
+
+# By default, Spring Boot provides a standard error web page. This page is
+# called the Whitelabel. It's enabled by default, but if we don't want to
+# display any error information, we can disable it:
+
+server.error.whitelabel.enabled=false
+
+# The default path to a Whitelabel is /error. We can customize it by setting
+# the server.error.path parameter:
+
+server.error.path=/user-error
+
+# We can also set properties that will determine which information about the
+# error is presented. For example, we can include the error message and the
+# stack trace:
+
+server.error.include-exception=true
+server.error.include-stacktrace=always
+
+# Our tutorials Exception Message Handling for REST and Customize Whitelabel
+# Error Page explain more about handling errors in Spring Boot.
+
+# When running on a low resource container, we might like to decrease the CPU
+# and memory load. One way of doing that is to limit the number of simultaneous
+# requests that can be handled by our application. Conversely, we can increase
+# this value to use more available resources to get better performance.
+# In Spring Boot, we can define the maximum amount of Tomcat worker threads:
+
+server.tomcat.threads.max=200
+
+# When configuring a web server, it also might be useful to set the server
+# connection timeout. This represents the maximum amount of time the server
+# will wait for the client to make their request after connecting before the
+# connection is closed:
+
+server.connection-timeout=5s
+
+# We can also define the maximum size of a request header:
+
+server.max-http-header-size=8KB
+
+# The maximum size of a request body:
+
+server.tomcat.max-swallow-size=2MB
+
+# Or a maximum size of the whole post request:
+
+server.tomcat.max-http-post-size=2MB
+
+# To enable SSL support in our Spring Boot application, we need to set the
+# server.ssl.enabled property to true and define an SSL protocol:
+
+server.ssl.enabled=true
+server.ssl.protocol=TLS
+
+# We should also configure the password, type, and path to the key store that
+# holds the certificate:
+
+server.ssl.key-store-password=my_password
+server.ssl.key-store-type=keystore_type
+server.ssl.key-store=keystore-path
+
+# And we must also define the alias that identifies our key in the key store:
+
+server.ssl.key-alias=tomcat
+
+# For more information about SSL configuration, visit our HTTPS using a self-signed certificate in the Spring Boot article.
+
+# Tomcat access logs are beneficial when measuring page hit counts, user session activity, and so on.
+# To enable access logs, simply set:
+
+server.tomcat.accesslog.enabled=true
+
+# We should also configure other parameters such as directory name, prefix, suffix, and date format appended to log files:
+
+server.tomcat.accesslog.directory=logs
+server.tomcat.accesslog.file-date-format=yyyy-MM-dd
+server.tomcat.accesslog.prefix=access_log
+server.tomcat.accesslog.suffix=.log

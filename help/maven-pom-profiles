@@ -1,0 +1,96 @@
+# vi:syntax=bash
+
+# Profile definiujemy w pliku pom.xml.
+# Podstawowy profil oznaczamy tagiem activeByDefault.
+
+<packaging>pom</packaging>
+<profiles>
+    <profile>
+        <id>mango-be-app</id>
+        <activation>
+            <activeByDefault>true</activeByDefault>
+        </activation>
+        <modules>
+            <module>mango-be-app</module>
+            <!-- DEPENDENCIES -->
+            <module>mango-be-account</module>
+            ...
+        </modules>
+    </profile>
+    <profile>
+        <id>mango-be-app-common</id>
+        <modules>
+            <module>mango-be-app-common</module>
+            <!-- DEPENDENCIES -->
+            <module>mango-be-account</module>
+            <module>mango-be-auth</module>
+            <module>mango-be-country</module>
+            <module>mango-be-cpa</module>
+            <module>mango-be-customer</module>
+            <module>mango-be-mac</module>
+            <module>mango-be-mcpid</module>
+            ...
+        </modules>
+    </profile>
+<profiles>
+
+# Aby spakować aplikację z określonymi profilami podejmy opcję -P i nazwy
+mvn package -P integration-tests,mutation-tests
+
+# Możęmy aktywować profil jeśli zostanie ustawiona określona właściwość
+<profile>
+    <id>active-on-property-environment</id>
+    <activation>
+        <property>
+            <name>environment</name>
+        </property>
+    </activation>
+</profile>
+
+# Właściwość można stawić przez polecenie
+#
+mvn package -Denvironment
+
+<property>
+    <name>!environment</name>
+</property>
+
+# Lub w taki sposób
+mvn package -Denvironment=test
+
+<property>
+    <name>environment</name>
+    <value>!test</value>
+</property>
+
+# Lub dla określonego JDK
+<profile>
+    <id>active-on-jdk-11</id>
+    <activation>
+        <jdk>11</jdk>
+    </activation>
+</profile>
+
+# Dla określonego systemu operacyjnego
+<profile>
+    <id>active-on-windows-10</id>
+    <activation>
+        <os>
+            <name>windows 10</name>
+            <family>Windows</family>
+            <arch>amd64</arch>
+            <version>10.0</version>
+        </os>
+    </activation>
+</profile>
+
+# Na postawie warunku czy istnieje plik
+<activation>
+    <file>
+        <missing>target/testreport.html</missing>
+    </file>
+</activation>
+
+# Ciekawa jest też opcja dezaktywacji profilu przez znak "-"
+mvn compile -P -active-on-jdk-11
+# -------------^

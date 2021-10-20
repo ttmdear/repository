@@ -14,3 +14,6 @@ grep '\->setArg(' $(grep -r -l 'Models\\positions\\positions')
 
 # Wyszukiwanie --include/--exclude/--exclude-dir
 grep -rni -E --include="*\.java" --exclude-dir="target" "ZdarzeniaKonfiguracjaModuluInformacyjnego"
+
+# Otworzenie listy plików w Gvim
+grep -rl '@author M' | xargs gvim -o1
