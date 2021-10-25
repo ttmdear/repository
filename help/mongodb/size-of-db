@@ -1,0 +1,15 @@
+// W MB
+// rs1:SECONDARY> db.stats(1024*1024*1024); W GB
+rs1:SECONDARY> db.stats(1024*1024);
+{
+        "db" : "orderDB",
+        "collections" : 153,
+        "objects" : 62896034,
+        "avgObjSize" : 3773.469466532659,
+        "dataSize" : 226341.49919986725,
+        "storageSize" : 44808.03515625,
+        "numExtents" : 0,
+        "indexes" : 248,
+        "indexSize" : 1848.609375,
+        "ok" : 1
+}
