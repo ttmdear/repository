@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=InteliJ
+TryExec=/opt/ideaIU-2021.2.2/idea-IU-212.5284.40/bin/idea.sh
+Exec=/opt/ideaIU-2021.2.2/idea-IU-212.5284.40/bin/idea.sh %F
+Terminal=false
+Type=Application
+Icon=/opt/ideaIU-2021.2.2/idea-IU-212.5284.40/bin/idea.png
+Categories=Development;
+StartupNotify=false

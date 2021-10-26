@@ -1,3 +1,5 @@
+#!/bin/bash
+
 systemctl status nginx.service
 systemctl start nginx.service
 
