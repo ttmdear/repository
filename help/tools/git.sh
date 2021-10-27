@@ -1,5 +1,10 @@
+# Save auth token
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# Just call below command in linux.
+git config --global credential.helper cache
+
 # Konfiguracja
-# --------------------------
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 git config --system zmienna wartosc - ustawienia dla kazdego projektu
 git config --global zmienna wartosc - ustawienia dla kazdego projektu
 git config zmienna wartosc - ustawienia dla aktualnego proejktu
@@ -126,3 +131,4 @@ git show nazwa_tagu- wyświetla informacje o tagu wraz z rewizjami
 git tag -a nazwa_tagu rewizja- taguje rewizję
 git push nazwa_serwera --tags- wypycha wszystkie tagi na podany serwer
 
+# 
