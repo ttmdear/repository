@@ -1,0 +1,33 @@
+# vi:syntax=bash
+
+# We create a query with reference to entities. The references will be
+# substitute with proper tables names.
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+@Query("select c from CountryEntity c where c.aCd in(:aCdList)")
+List<CountryEntity> findByaCdIn(@Param("aCdList") List<String> aCdList);
+
+
+# If query contain DML then the method must be marked as Transactional and
+# Modifying.
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+@Transactional
+@Modifying
+@Query("delete from OwnerOfferTEntity c where c.aOfferId = :offerId and c.aUsrId = :userId")
+void deleteByaOfferIdAndaUsrId(@Param("offerId") Long offerId, @Param("userId") Long userId);
+
+@Query("SELECT u FROM OwnerScenarioEntity u JOIN u.user r WHERE (r.aFirstNm LIKE %:searchKey% OR r.aMiddleNm LIKE %:searchKey%)")
+List<OwnerOfferEntity> findByUserFirstNameOrUserMiddleName(@Param("searchKey") String searchKey);
+
+# Make join base on relation.
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+@Table(name = "V_OWNER_SCEN")
+public class OwnerScenarioEntity extends OwnerScenarioBaseEntity {
+
+    @OneToOne
+    @JoinColumn(name = "aUsrId", insertable = false, updatable = false)
+    private UserEntity user;
+}
+
+@Query("SELECT u FROM OwnerScenarioEntity u JOIN u.user r WHERE (r.aFirstNm LIKE %:searchKey% OR r.aMiddleNm LIKE %:searchKey%)")
+List<OwnerScenarioEntity> findByUserFirstNameOrUserMiddleName(@Param("searchKey") String searchKey);
+
