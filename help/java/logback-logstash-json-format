@@ -1,0 +1,21 @@
+# vi:syntax=xml
+
+# Jest to rozszerzenie dla Logbacka pozwalające na formatowanie logów w różnych
+# formatach wspieranych przez Jacksona. Głównie jest to JSON.
+
+<!-- ... -->
+<appender name="AUDIT-FILE" class="com.mo.importer.auditlogger.service.config.ImmediateFileAppender">
+    <!-- ... -->
+    <encoder class="net.logstash.logback.encoder.LogstashEncoder">
+        <includeContext>false</includeContext>
+        <fieldNames>
+            <timestamp>eventDate</timestamp>
+            <message>eventName</message>
+            <version>[ignore]</version>
+            <levelValue>[ignore]</levelValue>
+            <logger>[ignore]</logger>
+            <thread>[ignore]</thread>
+        </fieldNames>
+        <customFields>{"app":"${APP_NAME}", "environment":"${RODZAJ_SRODOWISKA}", "place" : "westeurope"}</customFields>
+    </encoder>
+</appender>
