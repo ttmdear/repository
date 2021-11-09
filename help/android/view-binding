@@ -1,0 +1,40 @@
+// vi:syntax=java
+
+// For each file in layout there is created class with binding line
+// {NAME}Binding
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+// For activity it looks like.
+private ResultProfileBinding binding;
+
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    binding = ResultProfileBinding.inflate(getLayoutInflater());
+    View view = binding.getRoot();
+    setContentView(view);
+}
+
+// Then we can call method on this binding
+binding.getName().setText(viewModel.getName());
+binding.button.setOnClickListener(new View.OnClickListener() {
+    viewModel.userClicked()
+});
+
+// For fragment it looks like.
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+private ResultProfileBinding binding;
+
+@Override
+public View onCreateView (LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    binding = ResultProfileBinding.inflate(inflater, container, false);
+    View view = binding.getRoot();
+    return view;
+}
+
+@Override
+public void onDestroyView() {
+    super.onDestroyView();
+    binding = null;
+}
+
