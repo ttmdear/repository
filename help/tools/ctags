@@ -1,0 +1,18 @@
+# vi:syntax=bash
+
+# Java
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ctags -R --language-force=java --JAVA-kinds=+cip-f -f doc.ctags "c:\Program Files\Java\jdk1.8.0_20\src"
+
+# PHP
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ctags
+    -R
+    --exclude=.svn
+    --tag-relative=yes
+    --regex-PHP=/abstract\s+class\s+([^ ]+)/\1/c/
+    --regex-PHP=/interface\s+([^ ]+)/\1/c/
+    --regex-PHP=/(public\s+|static\s+|protected\s+|private\s+)\$([^ =]+)/\2/p/
+    --regex-PHP=/const\s+([^ =]+)/\1/d/
+    --regex-PHP=/final\s+(public\s+|static\s+|abstract\s+|protected\s+|private\s+)function\s+\&?\s*([^ (]+)/\2/f/
+    --PHP-kinds=+cfpd

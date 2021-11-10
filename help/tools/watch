@@ -1,0 +1,4 @@
+# vi:syntax=bash
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+watch -c  SYSTEMD_COLORS=1 systemctl status httpd.service
