@@ -629,4 +629,175 @@ Wire Wire Line
 Connection ~ 6025 2500
 Wire Wire Line
 	6025 2500 6350 2500
+$Comp
+L MCU_Microchip_ATtiny:ATtiny85-20MU U?
+U 1 1 61EDC23D
+P 3150 3750
+F 0 "U?" H 2607 3796 50  0001 R CNN
+F 1 "ATtiny85-20MU" H 3300 3950 50  0000 R CNN
+F 2 "Package_DFN_QFN:QFN-20-1EP_4x4mm_P0.5mm_EP2.6x2.6mm" H 3150 3750 50  0001 C CIN
+F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/atmel-2586-avr-8-bit-microcontroller-attiny25-attiny45-attiny85_datasheet.pdf" H 3150 3750 50  0001 C CNN
+	1    3150 3750
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:Battery_Cell BT?
+U 1 1 61EE30C6
+P 2000 3800
+F 0 "BT?" H 2118 3896 50  0001 L CNN
+F 1 "Battery_Cell" H 2100 3750 50  0001 L CNN
+F 2 "" V 2000 3860 50  0001 C CNN
+F 3 "~" V 2000 3860 50  0001 C CNN
+	1    2000 3800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3150 3050 3150 3150
+Wire Wire Line
+	3150 4450 3150 4350
+Wire Wire Line
+	2000 3900 2000 4450
+Wire Wire Line
+	2000 3600 2000 3050
+Wire Wire Line
+	2000 3050 3150 3050
+$Comp
+L Device:R R?
+U 1 1 61F0EB90
+P 4100 3550
+F 0 "R?" V 3900 3550 50  0001 C CNN
+F 1 "63" V 4000 3550 50  0000 C CNN
+F 2 "" V 4030 3550 50  0001 C CNN
+F 3 "~" H 4100 3550 50  0001 C CNN
+	1    4100 3550
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	4250 3550 4400 3550
+$Comp
+L Device:D_Zener D?
+U 1 1 61F11FBF
+P 4400 3300
+F 0 "D?" V 4650 3550 50  0001 R CNN
+F 1 "3.6V" V 4550 3500 50  0000 R CNN
+F 2 "" H 4400 3300 50  0001 C CNN
+F 3 "~" H 4400 3300 50  0001 C CNN
+	1    4400 3300
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	4400 3450 4400 3550
+Connection ~ 4400 3550
+$Comp
+L Device:R R?
+U 1 1 61F187B2
+P 4100 3650
+F 0 "R?" V 4300 3650 50  0001 C CNN
+F 1 "63" V 4200 3650 50  0000 C CNN
+F 2 "" V 4030 3650 50  0001 C CNN
+F 3 "~" H 4100 3650 50  0001 C CNN
+	1    4100 3650
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	4250 3650 4850 3650
+Wire Wire Line
+	4400 3150 4400 2950
+$Comp
+L Device:D_Zener D?
+U 1 1 61F1F22B
+P 4850 3300
+F 0 "D?" V 5100 3550 50  0001 R CNN
+F 1 "3.6V" V 4950 3500 50  0000 R CNN
+F 2 "" H 4850 3300 50  0001 C CNN
+F 3 "~" H 4850 3300 50  0001 C CNN
+	1    4850 3300
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	4850 3450 4850 3650
+Connection ~ 4850 3650
+$Comp
+L Device:R R?
+U 1 1 61F2275B
+P 5050 3300
+F 0 "R?" H 5120 3346 50  0001 L CNN
+F 1 "2k2" H 5120 3300 50  0000 L CNN
+F 2 "" V 4980 3300 50  0001 C CNN
+F 3 "~" H 5050 3300 50  0001 C CNN
+	1    5050 3300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4400 3550 5550 3550
+Wire Wire Line
+	4850 3650 5050 3650
+Wire Wire Line
+	5050 3450 5050 3650
+Connection ~ 5050 3650
+Wire Wire Line
+	5050 3650 5550 3650
+Wire Wire Line
+	4850 3150 4850 2950
+Wire Wire Line
+	4850 2950 4600 2950
+Wire Wire Line
+	4600 2950 4600 2750
+Connection ~ 4600 2950
+Wire Wire Line
+	4600 2950 4400 2950
+$Comp
+L power:GND #PWR?
+U 1 1 61F34D51
+P 4600 2750
+F 0 "#PWR?" H 4600 2500 50  0001 C CNN
+F 1 "GND" H 4605 2577 50  0000 C CNN
+F 2 "" H 4600 2750 50  0001 C CNN
+F 3 "" H 4600 2750 50  0001 C CNN
+	1    4600 2750
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	3150 3050 3150 2850
+Wire Wire Line
+	3150 2850 5050 2850
+Wire Wire Line
+	5050 2850 5050 3150
+Connection ~ 3150 3050
+Wire Wire Line
+	3750 3550 3950 3550
+Wire Wire Line
+	3750 3650 3950 3650
+Wire Wire Line
+	2000 4450 3150 4450
+$Comp
+L Device:R R?
+U 1 1 61F558A6
+P 3900 4150
+F 0 "R?" H 3970 4150 50  0001 L CNN
+F 1 "4k7" H 3970 4105 50  0001 L CNN
+F 2 "" V 3830 4150 50  0001 C CNN
+F 3 "~" H 3900 4150 50  0001 C CNN
+	1    3900 4150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3750 3950 3900 3950
+Wire Wire Line
+	3900 3950 3900 4000
+$Comp
+L power:+5V #PWR?
+U 1 1 61F5AC07
+P 3900 4300
+F 0 "#PWR?" H 3900 4150 50  0001 C CNN
+F 1 "+5V" H 3915 4473 50  0000 C CNN
+F 2 "" H 3900 4300 50  0001 C CNN
+F 3 "" H 3900 4300 50  0001 C CNN
+	1    3900 4300
+	-1   0    0    1   
+$EndComp
+Text Notes 5350 3750 0    39   ~ 0
+USB - D- (white)
+Text Notes 5350 3500 0    39   ~ 0
+USB - D+ (green)
 $EndSCHEMATC
