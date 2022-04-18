@@ -1,2 +1,0 @@
-# pet-clinic
-Spring Petclinic
