@@ -20,9 +20,7 @@ public class App {
         ApiSchema apiSchema = mapper.readValue(getFileFromResource("api-docs.json"), ApiSchema.class);
 
         CreateWord createWord = new CreateWord();
-        createWord.create(prepareGroups.prepare(apiSchema));
-
-        System.out.println("test");
+        createWord.create(prepareGroups.prepare(apiSchema), apiSchema);
     }
 
     public static File getFileFromResource(String fileName) throws URISyntaxException {

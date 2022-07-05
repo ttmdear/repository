@@ -14,7 +14,7 @@ public class ContentVariant {
         this.schema = schema;
     }
 
-    public boolean isSetSchema() {
+    public boolean hasSchema() {
         return schema != null;
     }
 }

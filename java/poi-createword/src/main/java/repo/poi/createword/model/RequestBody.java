@@ -25,7 +25,7 @@ public class RequestBody {
         return content.get(first(content.keySet()));
     }
 
-    public boolean isSetContentVariant() {
+    public boolean hasContentVariant() {
         return getContentVariant() != null;
     }
 
@@ -39,7 +39,7 @@ public class RequestBody {
         return contentVariant.getSchema();
     }
 
-    public boolean isSetContentSchema() {
+    public boolean hasContentSchema() {
         return getContentSchema() != null;
     }
 

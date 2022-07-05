@@ -34,7 +34,7 @@ public class Response {
         return content.get(first(content.keySet()));
     }
 
-    public boolean isSetContentVariant() {
+    public boolean hasContentVariant() {
         return getContentVariant() != null;
     }
 

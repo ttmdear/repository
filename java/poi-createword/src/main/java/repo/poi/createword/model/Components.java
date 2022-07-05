@@ -16,4 +16,8 @@ public class Components {
     public void setSchemas(Map<String, Component> schemas) {
         this.schemas = schemas;
     }
+
+    public boolean hasSchemas() {
+        return schemas != null && !schemas.isEmpty();
+    }
 }

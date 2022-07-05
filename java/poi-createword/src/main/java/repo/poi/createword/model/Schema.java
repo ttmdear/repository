@@ -41,11 +41,11 @@ public class Schema {
         this.ref = ref;
     }
 
-    public boolean isSetRef() {
+    public boolean hasRef() {
         return ref != null && !ref.isEmpty();
     }
 
-    public boolean isSetType() {
+    public boolean hasType() {
         return type != null && !type.isEmpty();
     }
 
@@ -65,5 +65,9 @@ public class Schema {
 
     public void setEnum(List<String> enum_) {
         this.enum_ = enum_;
+    }
+
+    public boolean hasEnum() {
+        return enum_ != null && !enum_.isEmpty();
     }
 }

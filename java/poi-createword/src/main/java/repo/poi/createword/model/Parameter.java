@@ -50,11 +50,11 @@ public class Parameter {
         this.description = description;
     }
 
-    public boolean isSetDescription() {
+    public boolean hasDescription() {
         return description != null && !description.isEmpty();
     }
 
-    public boolean isSetSchema() {
+    public boolean hasSchema() {
         return schema != null;
     }
 }

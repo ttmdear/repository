@@ -63,11 +63,11 @@ public class Operation {
         this.description = description;
     }
 
-    public boolean isSetSummary() {
+    public boolean hasSummary() {
         return summary != null && !summary.isEmpty();
     }
 
-    public boolean isSetDescription() {
+    public boolean hasDescription() {
         return description != null && !description.isEmpty();
     }
 
@@ -75,7 +75,7 @@ public class Operation {
         return parameters != null && !parameters.isEmpty();
     }
 
-    public boolean isSetRequestBody() {
+    public boolean hasRequestBody() {
         return requestBody != null;
     }
 

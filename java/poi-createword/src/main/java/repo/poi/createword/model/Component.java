@@ -24,4 +24,8 @@ public class Component {
     public void setProperties(Map<String, Schema> properties) {
         this.properties = properties;
     }
+
+    public boolean hasProperties() {
+        return properties != null && !properties.isEmpty();
+    }
 }

@@ -25,4 +25,8 @@ public class ApiSchema {
     public void setComponents(Components components) {
         this.components = components;
     }
+
+    public boolean hasComponents() {
+        return components != null;
+    }
 }
