@@ -30,13 +30,12 @@ public class CreateWord {
 
             for (GroupItem item : group.getItems()) {
                 appendOperation(item.getMethod(), item.getPath(), item.getOperation(), document);
-                break;
             }
         }
 
         // Components
         if (apiSchema.hasComponents()) {
-            // appendComponents(apiSchema.getComponents(), document);
+            appendComponents(apiSchema.getComponents(), document);
         }
 
         FileOutputStream out = new FileOutputStream("generated/MANGO Api Documentation.docx");
@@ -133,8 +132,7 @@ public class CreateWord {
         table.setWidth("9465");
         table.getCTTbl().addNewTblGrid().addNewGridCol().setW("9465");
         table.getCTTbl().getTblPr().unsetTblBorders();
-        // table.getRow(0).getCell(0).setText(format("%s %s", method.toUpperCase(), path));
-        table.getRow(0).getCell(0).setText("TEST");
+        table.getRow(0).getCell(0).setText(format("%s %s", method.toUpperCase(), path));
 
         XWPFTable requestTable = null;
 
