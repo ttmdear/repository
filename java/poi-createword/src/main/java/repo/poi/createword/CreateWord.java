@@ -125,7 +125,7 @@ public class CreateWord {
             setBrokenText(document.createParagraph(), operation.getDescription());
         }
 
-        setText(document.createParagraph().createRun(), "Request", true);
+        createDetailsSectionTitle("Request", document);
 
         XWPFTable table = document.createTable(1, 1);
         table.setStyleID("TableGrid");
@@ -137,7 +137,7 @@ public class CreateWord {
         XWPFTable requestTable = null;
 
         if (operation.hasParameters()) {
-            setText(document.createParagraph().createRun(), "Parameters", true);
+            createDetailsSectionTitle("Parameters", document);
 
             requestTable = createRequestTable(document, null);
 
@@ -163,7 +163,7 @@ public class CreateWord {
 
         if (operation.hasRequestBody() && operation.getRequestBody().hasContentSchema()) {
             if (requestTable == null) {
-                setText(document.createParagraph().createRun(), "Request", true);
+                createDetailsSectionTitle("Request", document);
             }
 
             requestTable = createRequestTable(document, requestTable);
@@ -175,7 +175,7 @@ public class CreateWord {
         }
 
         if (operation.hasResponses()) {
-            setText(document.createParagraph().createRun(), "Responses", true);
+            createDetailsSectionTitle("Responses", document);
             XWPFTable responsesTable = createDetailedTable("Http Status", "Body", "Details", document);
 
             for (Map.Entry<String, Response> entry : operation.getResponses().entrySet()) {
@@ -193,6 +193,13 @@ public class CreateWord {
                 row.getCell(2).setText(response.getDescription());
             }
         }
+    }
+
+    private void createDetailsSectionTitle(String text, XWPFDocument document) {
+        XWPFParagraph paragraph = document.createParagraph();
+
+        paragraph.createRun().setText(text);
+        paragraph.setStyle("DetailsSectionTitle");
     }
 
     private void setText(XWPFRun run, String text, boolean bold) {
