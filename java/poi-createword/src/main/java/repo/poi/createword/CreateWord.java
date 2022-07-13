@@ -68,11 +68,11 @@ public class CreateWord {
                     row.getCell(0).setText(entry1.getKey());
                     row.getCell(1).setText(resolveType(entry1.getValue()));
 
-                    if (schema.hasEnum()) {
-                        row.getCell(2).setText(String.format("Available values are %s", schema.getEnum().toString()));
-                    } else {
-                        row.getCell(2).setText("-");
-                    }
+//                    if (schema.hasEnum()) {
+//                        row.getCell(2).setText(String.format("Available values are %s", schema.getEnum().toString()));
+//                    } else {
+//                        row.getCell(2).setText("-");
+//                    }
                 }
             } else {
                 paragraph.createRun().setText("No properties");
@@ -89,18 +89,18 @@ public class CreateWord {
     }
 
     private XWPFTable createDetailedTable(String col1, String col2, String col3, XWPFDocument document) {
-        XWPFTable table = document.createTable(1, 3);
+        XWPFTable table = document.createTable(1, 2);
         table.setWidth("100%");
         table.setStyleID("PlainTable5");
         table.getCTTbl().getTblPr().unsetTblBorders();
 
         table.getRow(0).getCell(0).setText(col1);
         table.getRow(0).getCell(1).setText(col2);
-        table.getRow(0).getCell(2).setText(col3);
+//        table.getRow(0).getCell(2).setText(col3);
 
-        table.getCTTbl().addNewTblGrid().addNewGridCol().setW(3120L);
-        table.getCTTbl().getTblGrid().addNewGridCol().setW(3120L);
-        table.getCTTbl().getTblGrid().addNewGridCol().setW(3120L);
+        table.getCTTbl().addNewTblGrid().addNewGridCol().setW(4680L);
+        table.getCTTbl().getTblGrid().addNewGridCol().setW(4680L);
+//        table.getCTTbl().getTblGrid().addNewGridCol().setW(3120L);
 
         return table;
     }
@@ -153,11 +153,11 @@ public class CreateWord {
                     row.getCell(1).setText("");
                 }
 
-                if (parameter.hasDescription()) {
-                    row.getCell(2).setText(parameter.getDescription());
-                } else {
-                    row.getCell(2).setText("-");
-                }
+//                if (parameter.hasDescription()) {
+//                    row.getCell(2).setText(parameter.getDescription());
+//                } else {
+//                    row.getCell(2).setText("-");
+//                }
             }
         }
 
@@ -171,7 +171,7 @@ public class CreateWord {
             XWPFTableRow row = requestTable.createRow();
             row.getCell(0).setText("Body");
             row.getCell(1).setText(resolveType(operation.getRequestBody().getContentSchema()));
-            row.getCell(2).setText("-");
+//            row.getCell(2).setText("-");
         }
 
         if (operation.hasResponses()) {
@@ -190,7 +190,7 @@ public class CreateWord {
                     row.getCell(1).setText("");
                 }
 
-                row.getCell(2).setText(response.getDescription());
+//                row.getCell(2).setText(response.getDescription());
             }
         }
     }
