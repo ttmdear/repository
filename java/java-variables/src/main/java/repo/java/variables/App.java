@@ -1,20 +1,97 @@
 package repo.java.variables;
 
+import org.w3c.dom.html.HTMLOListElement;
+
+import java.util.Arrays;
+
 public class App {
     public static void main(String[] args) {
-        boolean input1 = true, input2 = false;  // Line 1
-        boolean result1 = input1 = !input1; // Line 2
-        boolean result2 = input2 = input1;  // Line 3
-        boolean result3 = input1 == (result1=!input2);  // Line 4
-        System.out.println(input1+" " +input2 + " " +  result2 + " " + result3);
-
-        int a = 10;
-        int b = 20;
-
-        int c = a+++b;
+        scope(1, '3');
+        unicode();
+        binaryAndHexNotation();
         unsignedVariables();
-//        narrowingAndWidening();
-//        defineVariables();
+        narrowingAndWidening();
+        defineVariables();
+    }
+
+    private static void scope(int var1, char var2) {
+        // Local scope
+        var1 = 10;
+
+        if (var1 >= 10) {
+            int var3 = 20;
+        }
+
+        // Lambda scope
+        int finalVar = var1;
+
+        Arrays.asList("1", "2").forEach(s -> {
+            printf("%s - %s", finalVar, s);
+        });
+
+        for (int var3 = 0; var3 < 10; var3++) {
+            // loop scope
+            printf("%s%n", var3);
+        }
+
+        while (var1 < 100) {
+            // loop scope
+            int var4 = 10;
+            // ...
+            var1++;
+        }
+
+        var2 = 20;
+
+        class LocalClass {
+            private int var1;
+
+            public LocalClass() {
+                this.var1 = var1;
+            }
+
+            public void test() {
+                System.out.println("LocalClass.var1 " + var1);
+                // System.out.println("LocalClass.var2 " + var2); // var is not final
+            }
+        }
+
+        new LocalClass().test();
+    }
+
+    public static void printf(String format, Object... args) {
+        System.out.printf(format, args);
+    }
+
+    private static void unicode() {
+        printHead("unicode");
+
+        char c = '\u0987';
+
+        System.out.println(c);
+    }
+
+    private static void binaryAndHexNotation() {
+        printHead("binaryAndHexNotation");
+        byte b = 0b100;
+        short s = 0b100;
+        int i = 0b100;
+        long l = 0b100;
+        float f = 0b100;
+
+        System.out.printf("byte %s%n", b);
+        System.out.printf("short %s%n", s);
+        System.out.printf("int %s%n", i);
+        System.out.printf("long %s%n", l);
+        System.out.printf("float %s%n", f);
+
+        byte bh = 0x4;
+        System.out.printf("byte %s%n", bh);
+    }
+
+    private static void printHead(String title) {
+        System.out.println(title);
+        System.out.println("--------------------------------------------");
     }
 
     private static void unsignedVariables() {
@@ -40,7 +117,8 @@ public class App {
         float f1 = c;
         double d1 = c;
 
-        long l3 = Integer.MAX_VALUE; l3++;
+        long l3 = Integer.MAX_VALUE;
+        l3++;
         int i3 = (int) l3;
 
         System.out.println(l3);
@@ -98,5 +176,23 @@ public class App {
 
     private static boolean resolve() {
         return true;
+    }
+
+    static class ScopeClass {
+        // Przestrzeń klasy
+        private static int var1;
+        private int var2;
+
+        public ScopeClass(int var1, int var2) {
+            ScopeClass.var1 = 1;
+            this.var2 = 2;
+            var1 = 3;
+            var2 = 4;
+
+            Arrays.asList("1", "2").forEach(s -> {
+                // Przetrzeń lambda
+                printf("%s - %s", this.var2, s);
+            });
+        }
     }
 }
