@@ -2,9 +2,36 @@ package repo.java.string;
 
 public class App {
     public static void main(String[] args) {
-        System.out.println("Hello World!");
-
         construct();
+        intern();
+        immutable();
+    }
+
+    private static void immutable() {
+        String s1 = "User 1" + "User 2" + "User 3";
+        System.out.printf("s1 %s%n", s1);
+    }
+
+    private static void intern() {
+        String s1 = "TEST";
+        String s2 = "TEST";
+
+        System.out.printf("s1 == s2: %s%n", s1 == s2);
+
+        String s3 = new String("TEST");
+        String s4 = new String("TEST");
+
+        System.out.printf("s3 == s4: %s%n", s3 == s4);
+
+        String s5 = s3.intern();
+        String s6 = s4.intern();
+
+        System.out.printf("s5 == s6: %s%n", s5 == s6);
+
+        String s7 = new String().intern();
+        String s8 = new String();
+
+        System.out.printf("s7 == s8: %s%n", s7 == s8);
     }
 
     private static void construct() {
