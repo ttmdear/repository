@@ -5,13 +5,52 @@ import org.w3c.dom.html.HTMLOListElement;
 import java.util.Arrays;
 
 public class App {
+    // var int age = 10;
+
     public static void main(String[] args) {
+        typeInference();
         scope(1, '3');
         unicode();
         binaryAndHexNotation();
         unsignedVariables();
         narrowingAndWidening();
         defineVariables();
+    }
+
+    private static void typeInference() {
+        printHead("typeInference");
+//        var userName = null;
+
+        int a = 10;
+        var b = a;
+
+        var scopeClass = getScopeClass();
+
+        for(var c = b; c <= 10; c++) {
+            // ...
+        }
+
+        // var x, y, x = 10;
+
+        var user = new ScopeClass(1, 2);
+        user = null;
+        var aga = user;
+
+        class Var {
+            private int var = 10;
+
+            public Var(int var) {
+                this.var = var;
+
+                var b = var;
+            }
+        }
+
+        printEnd();
+    }
+
+    private static void printEnd() {
+        System.out.println("--------------------------------------------");
     }
 
     private static void scope(int var1, char var2) {
@@ -176,6 +215,10 @@ public class App {
 
     private static boolean resolve() {
         return true;
+    }
+
+    private static ScopeClass getScopeClass() {
+        return new ScopeClass(1, 2);
     }
 
     static class ScopeClass {
