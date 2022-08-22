@@ -1,10 +1,60 @@
 package repo.java.string;
 
+import java.util.regex.Pattern;
+
 public class App {
     public static void main(String[] args) {
-        construct();
-        intern();
-        immutable();
+//        construct();
+//        intern();
+//        immutable();
+//        concating();
+//        comparison();
+        search();
+    }
+
+    private static void search() {
+        String s1 = "xwordywordzword";
+        //           012345678901234
+
+        int i1 = s1.indexOf("word");
+        int i2 = s1.lastIndexOf("word");
+        int i3 = s1.lastIndexOf("game");
+
+        System.out.printf("i1 -> %s%n", i1); // 1
+        System.out.printf("i2 -> %s%n", i2); // 11
+        System.out.printf("i2 -> %s%n", i3); // -1
+
+        Pattern pattern = Pattern.compile(".*y.*");
+        System.out.printf("match -> %s%n", pattern.matcher(s1).matches()); // match -> true
+
+
+        boolean reg = s1.regionMatches(5, "yword", 0, 5);
+        System.out.printf("reg -> %s%n", reg);
+    }
+
+    private static void concating() {
+        String s1 = "User";
+        String s2 = s1 + " 2";
+
+        System.out.printf("s2 %s%n", s2);
+
+        String s3 = s1.concat(s2);
+
+        System.out.printf("s3 %s%n", s3);
+
+        String s4 = "Person";
+        s4 += s3;
+
+        System.out.printf("s4 %s%n", s4);
+    }
+
+    private static void comparison() {
+        String s1 = new String(new char[]{'J', 'O', 'H', 'N'});
+        String s2 = new String("JPHN");
+
+        int c1 = s1.compareTo(s2);
+
+        System.out.printf("c1 %s%n", c1); // 1
     }
 
     private static void immutable() {
