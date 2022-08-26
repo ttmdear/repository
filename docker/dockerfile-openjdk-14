@@ -1,0 +1,24 @@
+FROM openjdk:14
+
+ENV KK_HOME=/opt/kk
+ENV KK_SHARED=/var/opt/kk
+
+VOLUME ${KK_HOME}
+VOLUME ${KK_SHARED}
+
+ENV KK_ADDR 0.0.0.0
+ENV KK_PORT 80
+
+EXPOSE ${KK_PORT}
+
+ENV JAR_FILE=mod-admin/target/mod-admin-*.jar
+
+RUN mkdir -p ${KK_HOME}/etc ${KK_HOME}/lib ${KK_SHARED}/log ${KK_SHARED}/backup
+
+COPY etc/logback-admin.xml ${KK_HOME}/etc/logback.xml
+COPY ${JAR_FILE} ${KK_HOME}/lib/kk.jar
+
+CMD ["java", \
+    "-Dlogging.config=/opt/kk/etc/logback.xml", \
+    "-jar", \
+    "/opt/kk/lib/kk.jar"]

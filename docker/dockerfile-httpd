@@ -1,0 +1,22 @@
+FROM httpd:2.4
+RUN apt update -y && apt upgrade -y  && \
+    mkdir -p /usr/local/apache2/conf/certs /var/local/apache2/logs /usr/local/apache2/conf/mods-enabled
+ENV APACHE_RUN_USER www-data
+ENV APACHE_RUN_GROUP www-data
+ENV APACHE_CONFDIR /usr/local/apache2/conf
+ENV APACHE_RUN_DIR /var/local/apache2
+ENV APACHE_PID_FILE /var/local/apache2/pid
+ENV APACHE_LOG_DIR /var/local/apache2/logs
+COPY ./apache2.conf /usr/local/apache2/conf/httpd.conf
+COPY ./ports.conf   /usr/local/apache2/conf/ports.conf
+COPY ./envvars  /usr/local/apache2/conf/envvars
+COPY ./certs/ut.edu.pl.key /usr/local/apache2/conf/certs
+COPY ./certs/ut.edu.pl.pem /usr/local/apache2/conf/certs
+COPY ./mods-available/  /usr/lib/apache2/modules/
+COPY ./ofikoadm.conf /usr/local/apache2/conf/sites-available
+COPY ./ofikoadm-ssl.conf /usr/local/apache2/conf/sites-available
+#RUN a2ensite ofikoadm && a2ensite ofikoadm-ssl
+RUN ln -s /usr/local/apache2/conf/mods-available/mpm_prefork.conf /usr/local/apache2/conf/mods-enabled/mpm_prefork.conf && \
+    ln -s /usr/local/apache2/conf/mods-available/mpm_prefork.load /usr/local/apache2/conf/mods-enabled/mpm_prefork.load
+EXPOSE 8443
+EXPOSE 8880

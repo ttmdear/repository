@@ -1,0 +1,4 @@
+FROM openjdk:11
+WORKDIR /usr/komponent-komunikacji
+COPY files/komponent_komunikacji.jar /usr/komponent-komunikacji/komponent_komunikacji.jar
+CMD java -jar komponent_komunikacji.jar

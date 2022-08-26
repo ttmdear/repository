@@ -1,0 +1,26 @@
+# docker-compose -f docker-compose-db.yml up
+version: '3.9'
+services:
+  postgres:
+    image: postgres:10
+    container_name: eda2_postgres
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=1qaz@WSX
+      - POSTGRES_DB=irp
+    ports:
+      - '5432:5432'
+    volumes:
+      - postgres:/var/lib/postgresql/data
+#    networks:
+#      - eda2_network
+# docker volume ls
+volumes:
+  postgres:
+    name: eda2_postgres_volume
+# docker network list
+# docker network inspect eda2_network
+#networks:
+#  eda2_network:
+#    name: eda2_network
+
