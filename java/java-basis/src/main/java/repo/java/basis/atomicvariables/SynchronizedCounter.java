@@ -1,10 +1,10 @@
 package repo.java.basis.atomicvariables;
 
-public class UnsafeCounter implements Counter {
+public class SynchronizedCounter implements Counter {
     private volatile int value;
 
     @Override
-    public void increase() {
+    public synchronized void increase() {
         value++;
     }
 
