@@ -34,9 +34,9 @@ public class Main {
     }
 
     private void runSimplePersis() {
-        persist(new com.repo.serialization.PersistentTime());
+        persist(new PersistentTime());
 
-        com.repo.serialization.PersistentTime time = unpersist();
+        PersistentTime time = unpersist();
 
         System.out.println(time.getTime());
     }

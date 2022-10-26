@@ -1,8 +1,8 @@
 package repo.java.xml.dom;
 
-import com.ttmdear.repository.xml.Util;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
+import repo.java.xml.Util;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;

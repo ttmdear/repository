@@ -9,8 +9,8 @@ import java.util.concurrent.ThreadLocalRandom;
  * Hello world!
  */
 public class Main {
-    public static void main( String[] args ) {
-        new App().run();
+    public static void main(String[] args) {
+        new Main().run();
     }
 
     public void run() {

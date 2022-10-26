@@ -1,6 +1,6 @@
 package repo.java.security;
 
-import com.ttmdear.repository.security.signature.Signing;
+import repo.java.security.signature.Signing;
 
 import java.security.NoSuchAlgorithmException;
 

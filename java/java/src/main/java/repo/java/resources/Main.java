@@ -26,7 +26,7 @@ public class Main {
         System.out.println("readListResourceBundle");
         System.out.println("-----------------------");
 
-        ListResourceBundle listResourceBundle = new repo.java.resourcebundles.UserResources();
+        ListResourceBundle listResourceBundle = new UserResources();
 
         System.out.println(listResourceBundle.getString("database.host"));
         System.out.println(listResourceBundle.getString("database.user"));
