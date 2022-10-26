@@ -16,25 +16,36 @@ import static java.lang.String.format;
 
 public class Main {
     public static void main(String[] args) {
-        testIteratorRemove();
-        testRemoveAll();
-        testRemoveIf();
-        testListIterator();
-        testPriorityQueue();
-        testEnumSet();
-        testEnumMap();
-        testIdentityHashMap();
-        testCollections();
-        testSubList();
-        testUnmodifiableViews();
-        testSynchronizedViews();
-        testSecuredView();
-        testBinarySearch();
+        testSetAndAdd();
+//        testIteratorRemove();
+//        testRemoveAll();
+//        testRemoveIf();
+//        testListIterator();
+//        testPriorityQueue();
+//        testEnumSet();
+//        testEnumMap();
+//        testIdentityHashMap();
+//        testCollections();
+//        testSubList();
+//        testUnmodifiableViews();
+//        testSynchronizedViews();
+//        testSecuredView();
+//        testBinarySearch();
+    }
+
+    private static void testSetAndAdd() {
+        List<Integer> list = new ArrayList<>(List.of(1, 2, 3));
+
+        // list.add(4, 10);// IndexOutOfBoundsException
+        // list.set(4, 10); // IndexOutOfBoundsException
+        // list.add(list.size() + 1, 30); // IndexOutOfBoundsException
+        list.add(list.size(), 30);
+
+        System.out.printf(Arrays.toString(list.toArray()));
     }
 
     private static void testBinarySearch() {
         System.out.println("testBinarySearch");
-
 
         List<Integer> list = new ArrayList<>(Arrays.asList(23, 1, 304, 123, 45, 23, 123, 598, 234, 120));
 
