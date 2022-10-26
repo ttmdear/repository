@@ -1,10 +1,9 @@
 package repo.java.basis.atomicvariables;
 
-import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.LongAdder;
 
 public class LongAdderCounter implements Counter {
-    private LongAdder value = new LongAdder();
+    private final LongAdder value = new LongAdder();
 
     @Override
     public void increase() {

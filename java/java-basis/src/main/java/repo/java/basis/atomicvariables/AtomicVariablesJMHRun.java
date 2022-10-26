@@ -12,7 +12,6 @@ import java.io.IOException;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
-import java.util.concurrent.atomic.AtomicInteger;
 
 public class AtomicVariablesJMHRun {
     public static void main(String[] args) throws ExecutionException, InterruptedException, IOException {
@@ -20,13 +19,44 @@ public class AtomicVariablesJMHRun {
     }
 
     @Benchmark
-    @BenchmarkMode(Mode.AverageTime)
+    @Fork(1)
+    @Warmup(iterations = 3, time = 10)
+    @Measurement(iterations = 1, time = 10)
     @OutputTimeUnit(TimeUnit.MICROSECONDS)
-    @Fork(value = 1, warmups = 4)
-    @Warmup(iterations = 3, time = 1)
-    @Measurement(iterations = 5, time = 2)
+    @BenchmarkMode(Mode.AverageTime)
     public static void testLongAdderCounter() throws ExecutionException, InterruptedException {
         Counter counter = new LongAdderCounter();
+        counter.increase();
+
+        CompletableFuture.allOf(
+            runCounter(counter),
+            runCounter(counter)
+        ).get();
+    }
+
+    @Benchmark
+    @Fork(1)
+    @Warmup(iterations = 3, time = 10)
+    @Measurement(iterations = 1, time = 10)
+    @OutputTimeUnit(TimeUnit.MICROSECONDS)
+    @BenchmarkMode(Mode.AverageTime)
+    public static void testSynchronizedCounter() throws ExecutionException, InterruptedException {
+        Counter counter = new SynchronizedCounter();
+
+        CompletableFuture.allOf(
+            runCounter(counter),
+            runCounter(counter)
+        ).get();
+    }
+
+    @Benchmark
+    @Fork(1)
+    @Warmup(iterations = 3, time = 10)
+    @Measurement(iterations = 1, time = 10)
+    @OutputTimeUnit(TimeUnit.MICROSECONDS)
+    @BenchmarkMode(Mode.AverageTime)
+    public static void testAtomicIntegerCounter() throws ExecutionException, InterruptedException {
+        Counter counter = new AtomicIntegerCounter();
 
         CompletableFuture.allOf(
             runCounter(counter),
@@ -36,7 +66,6 @@ public class AtomicVariablesJMHRun {
 
     public static CompletableFuture<Void> runCounter(Counter counter) {
         return CompletableFuture.runAsync(() -> {
-            System.out.printf(Thread.currentThread().getName() + "\n");
             for (int i = 0; i < 100000000; i++) {
                 counter.increase();
             }
