@@ -1,4 +1,4 @@
-package repo.java.jhm.atomicvariables;
+package repo.java.jhm.atomic;
 
 public class SynchronizedCounter implements Counter {
     private volatile int value;

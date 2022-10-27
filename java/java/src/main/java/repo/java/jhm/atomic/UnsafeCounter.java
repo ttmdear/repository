@@ -1,4 +1,4 @@
-package repo.java.jhm.atomicvariables;
+package repo.java.jhm.atomic;
 
 public class UnsafeCounter implements Counter {
     private volatile int value;

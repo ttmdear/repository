@@ -1,4 +1,4 @@
-package repo.java.jhm.atomicvariables;
+package repo.java.jhm.atomic;
 
 import org.openjdk.jmh.annotations.BenchmarkMode;
 import org.openjdk.jmh.annotations.Fork;
@@ -11,7 +11,7 @@ import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 
-public class Benchmarks {
+public class _Benchmarks {
 
     // @Benchmark
     @Fork(1)
