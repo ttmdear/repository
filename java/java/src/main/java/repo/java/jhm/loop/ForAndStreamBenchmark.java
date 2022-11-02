@@ -11,8 +11,10 @@ import org.openjdk.jmh.annotations.Setup;
 import org.openjdk.jmh.annotations.State;
 
 import java.util.Arrays;
+import java.util.Hashtable;
 import java.util.List;
 import java.util.Random;
+import java.util.Vector;
 import java.util.concurrent.TimeUnit;
 
 @State(Scope.Benchmark)
