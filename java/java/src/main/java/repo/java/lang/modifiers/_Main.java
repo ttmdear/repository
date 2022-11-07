@@ -19,5 +19,13 @@ public class _Main {
         PublicClass publicClass = new PublicClass("10");
 
         PublicClass.PublicInnerClass publicInnerClass = publicClass.new PublicInnerClass();
+        PublicClass.PublicInnerClass publicInnerClass1 = publicClass.getPublicInnerClass();
+        PublicClass.PublicInnerClass publicInnerClass2 = publicClass.getPublicInnerClass2();
+
+        System.out.printf("PUBLIC_STATIC %s%n", PublicClass.PUBLIC_STATIC);
+        System.out.printf("PUBLIC_STATIC_NESTED %s%n", PublicClass.PublicInnerClass.PUBLIC_STATIC_NESTED);
+
+        // System.out.printf("PUBLIC_STATIC %s%n", PublicClass.PublicInnerClass.PUBLIC_STATIC);
+        //                                                                      ^^^^^ - cannot ref to parent static context
     }
 }
