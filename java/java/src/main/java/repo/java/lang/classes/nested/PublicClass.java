@@ -24,7 +24,21 @@ public class PublicClass {
     }
 
     public class PublicInnerClass {
+        public static final String PUBLIC_STATIC_NESTED_FINAL = "nested";
+
         public static String PUBLIC_STATIC_NESTED = "nested";
+
+        public static void doStatic() {
+
+        }
+
+        public interface NestedNestedInterface { }
+
+        public enum NestedNestedEnum { A, B }
+
+        public static class NestedUser {}
+
+        public class NestedUser2 {}
 
         public void doSth() {
             System.out.print(NAME);
