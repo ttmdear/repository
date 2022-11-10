@@ -3,7 +3,7 @@ package repo.java.lang.classes.anonymous;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Main {
+public class _Main {
     public static void main(String[] args) {
         case1();
         case2();
