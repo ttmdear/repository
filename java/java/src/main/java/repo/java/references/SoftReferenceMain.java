@@ -1,8 +1,14 @@
 package repo.java.references;
 
+import java.lang.ref.Reference;
 import java.lang.ref.ReferenceQueue;
 import java.lang.ref.SoftReference;
 import java.text.NumberFormat;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.UUID;
 
 public class SoftReferenceMain {
 
@@ -11,39 +17,15 @@ public class SoftReferenceMain {
     }
 
     public void run() {
-        while(true) {
-            sleep(1000);
-        }
-//        ReferenceQueue<Object> referenceQueue = new ReferenceQueue<>();
-//
-//        // Counter localCounter = new Counter();
-//        // SoftReference<Counter> objectRef = new SoftReference<>(localCounter, referenceQueue);
-//
-//        SoftReference<Data> objectRef = new SoftReference<>(new Data(), referenceQueue);
-//
-//        // SoftReference<Counter> objectRef = new SoftReference<>(createCounter(), referenceQueue);
-//
-//        new Thread(() -> {
-//            Data data = objectRef.get();
-//            for (int i = 0; i < 10; i++) {
-//                data.increase();
-//                System.out.println("task " + data.getValue());
-//
-//                sleep(1000);
-//            }
-//        }).start();
-//
-//        while (true) {
-//            sleep(1000);
-//
-//            if (objectRef.get() != null) {
-//                System.out.println("object allocated");
-//            } else {
-//                System.out.println("object cleaned");
-//            }
-//
-//            printReport();
-//        }
+        ReferenceQueue<Object> referenceQueue = new ReferenceQueue<>();
+        Cache cache = new Cache();
+
+        new Thread(() -> {
+            while (true) {
+                cache.put(new User());
+                sleep(1);
+            }
+        }).start();
     }
 
     private void printReport() {
@@ -64,8 +46,40 @@ public class SoftReferenceMain {
         System.out.println(sb.toString());
     }
 
-    public static Data createCounter() {
-        return new Data();
+    public static class Cache {
+        private List<SoftReference<User>> users = new ArrayList<>();
+        private ReferenceQueue<User> referenceQueue = new ReferenceQueue<>();
+
+        public void put(User user) {
+            users.add(new SoftReference<>(user, referenceQueue));
+            clean();
+        }
+
+        private void clean() {
+            Reference<? extends User> poll;
+
+            while((poll = referenceQueue.poll()) != null) {
+                System.out.println("%s cleaned\n".formatted(poll.get().id));
+            }
+        }
+    }
+
+    public static class User {
+        String id;
+        String body;
+
+        public User() {
+            id = UUID.randomUUID().toString();
+//            System.out.println("put %s".formatted(id));
+
+            StringBuilder bodyBuilder = new StringBuilder();
+
+            for (int i = 0; i < 10000000; i++) {
+                bodyBuilder.append(UUID.randomUUID());
+            }
+
+            body = bodyBuilder.toString();
+        }
     }
 
     public static void sleep(long millis) {
@@ -73,18 +87,6 @@ public class SoftReferenceMain {
             Thread.sleep(1000);
         } catch (InterruptedException e) {
             e.printStackTrace();
-        }
-    }
-
-    public static class Data {
-        private int i;
-
-        void increase() {
-            i++;
-        }
-
-        int getValue() {
-            return i;
         }
     }
 }
