@@ -9,6 +9,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
+import java.util.function.Supplier;
 
 public class SoftReferenceMain {
 
@@ -26,6 +27,7 @@ public class SoftReferenceMain {
                 sleep(1);
             }
         }).start();
+
     }
 
     private void printReport() {

@@ -15,12 +15,7 @@ public class WeakReferenceMain {
 
     public void run() {
         ReferenceQueue<Object> referenceQueue = new ReferenceQueue<>();
-
-        // Counter localCounter = new Counter();
-        // WeakReference<Counter> objectRef = new WeakReference<>(localCounter, referenceQueue);
-
         WeakReference<Counter> objectRef = new WeakReference<>(new Counter(), referenceQueue);
-
         // WeakReference<Counter> objectRef = new WeakReference<>(createCounter(), referenceQueue);
 
         new Thread(() -> {
