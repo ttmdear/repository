@@ -5,21 +5,21 @@ import com.ttmdear.repository.hibernate.core.domain.User;
 import com.ttmdear.repository.hibernate.core.domain.UserStatus;
 import com.ttmdear.repository.hibernate.core.domain.UserType;
 import com.ttmdear.repository.hibernate.info.domain.Phone;
-import jdk.nashorn.internal.objects.annotations.Constructor;
-import lombok.Data;
-import org.hibernate.*;
+import org.hibernate.ObjectNotFoundException;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
 import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
-import org.hibernate.criterion.Projection;
-import org.hibernate.criterion.ProjectionList;
-import org.hibernate.criterion.Projections;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 import javax.persistence.Tuple;
 import javax.persistence.criteria.*;
-import java.util.*;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Random;
+import java.util.UUID;
 import java.util.function.Consumer;
 
 public class App {
@@ -27,9 +27,8 @@ public class App {
     private Random random = new Random();
 
 
-    public static void main( String[] args ) {
+    public static void main(String[] args) {
         new App().run();
-
     }
 
     public void run() {
@@ -59,7 +58,7 @@ public class App {
 
         // Fetch byId
         fetchByIdReference();
-        
+
         // Save
         testSaveEntity();
 
@@ -73,7 +72,7 @@ public class App {
 
         runInSession(this::testElementCollection);
 
-        while(true) {
+        while (true) {
             try {
                 Thread.sleep(5000);
             } catch (InterruptedException e) {
@@ -103,24 +102,39 @@ public class App {
         System.out.println("fetchingByHQL");
 
         List<HQLResult> result = session.createQuery("" +
-                "SELECT " +
-                "    u.id,  " +
-                "    count(p.value) as count " +
-                "FROM User as u " +
-                "JOIN Phone as p " +
-                "GROUP BY u.id")
+                        "SELECT " +
+                        "    u.id,  " +
+                        "    count(p.value) as count " +
+                        "FROM User as u " +
+                        "JOIN Phone as p " +
+                        "GROUP BY u.id")
                 .getResultList();
 
         System.out.println("result: " + result);
     }
 
-    @Data
     private static class HQLResult {
         private String id;
         private Long count;
 
         public HQLResult(String id, Long count) {
             this.id = id;
+            this.count = count;
+        }
+
+        public String getId() {
+            return id;
+        }
+
+        public void setId(String id) {
+            this.id = id;
+        }
+
+        public Long getCount() {
+            return count;
+        }
+
+        public void setCount(Long count) {
             this.count = count;
         }
     }
@@ -165,13 +179,28 @@ public class App {
     //     System.out.println("result: " + result);
     // }
 
-    @Data
     private static class GroupResultDto {
         private String id;
         private Long numberOfPhones;
 
         public GroupResultDto(String id, Long numberOfPhones) {
             this.id = id;
+            this.numberOfPhones = numberOfPhones;
+        }
+
+        public String getId() {
+            return id;
+        }
+
+        public void setId(String id) {
+            this.id = id;
+        }
+
+        public Long getNumberOfPhones() {
+            return numberOfPhones;
+        }
+
+        public void setNumberOfPhones(Long numberOfPhones) {
             this.numberOfPhones = numberOfPhones;
         }
     }
@@ -184,15 +213,15 @@ public class App {
         Join<User, Phone> phonesJoin = userRoot.join("phones");
 
         cq.multiselect(
-            userRoot.get("id"),
-            userRoot.get("firstName"),
-            userRoot.get("lastName"),
-            phonesJoin.get("value")
+                userRoot.get("id"),
+                userRoot.get("firstName"),
+                userRoot.get("lastName"),
+                phonesJoin.get("value")
         );
 
         List<Object[]> result = session.createQuery(cq).getResultList();
 
-        for(Object[] row: result) {
+        for (Object[] row : result) {
             System.out.println("id: " + row[0]);
             System.out.println("firstName: " + row[1]);
             System.out.println("lastName: " + row[2]);
@@ -456,7 +485,7 @@ public class App {
 
         List<Tuple> values = entityManager.createQuery(cq).getResultList();
 
-        for(Tuple row: values) {
+        for (Tuple row : values) {
             System.out.println("id: " + row.get(0, String.class));
             System.out.println("firstName: " + row.get(1, String.class));
 
@@ -476,13 +505,13 @@ public class App {
         Root<User> userRoot = cq.from(User.class);
 
         cq.multiselect(
-            userRoot.get("id"),
-            userRoot.get("firstName")
+                userRoot.get("id"),
+                userRoot.get("firstName")
         );
 
         List<Object[]> values = entityManager.createQuery(cq).getResultList();
 
-        for(Object[] row: values) {
+        for (Object[] row : values) {
             System.out.println("id: " + row[0]);
             System.out.println("firstName: " + row[1]);
 
@@ -508,7 +537,7 @@ public class App {
 
         List<Object[]> values = entityManager.createQuery(cq).getResultList();
 
-        for(Object[] value: values) {
+        for (Object[] value : values) {
             System.out.println("firstName: " + value[0]);
             System.out.println("lastName: " + value[1]);
         }

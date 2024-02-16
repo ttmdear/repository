@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Test;
 import static com.tngtech.archunit.lang.syntax.ArchRuleDefinition.classes;
 
 class ArchitectureTest {
+
     private static JavaClasses JC = new ClassFileImporter().importPackages("repo.archunit");
 
     @Test

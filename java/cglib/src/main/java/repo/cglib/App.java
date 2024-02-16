@@ -1,17 +1,14 @@
 package repo.cglib;
 
-import java.lang.reflect.Method;
-import java.util.Arrays;
-
 import net.sf.cglib.proxy.Enhancer;
 import net.sf.cglib.proxy.FixedValue;
 import net.sf.cglib.proxy.MethodInterceptor;
 import net.sf.cglib.proxy.MethodProxy;
 
-/**
- * Hello world!
- */
+import java.lang.reflect.Method;
+
 public class App {
+
     public static void main(String[] args) {
         // proxyFixValue();
         proxyFixWithInterceptor();
@@ -26,8 +23,7 @@ public class App {
         enhancer.setCallback(new MethodInterceptor() {
             @Override
             public Object intercept(Object proxy, Method method, Object[] objects, MethodProxy methodProxy) throws
-                Throwable {
-
+                    Throwable {
                 System.out.println(method.getDeclaringClass());
                 System.out.println(method.getReturnType());
 
@@ -45,8 +41,6 @@ public class App {
     }
 
     private static void proxyFixValue() {
-        System.out.println("proxyFixValue");
-
         Enhancer enhancer = new Enhancer();
 
         enhancer.setSuperclass(UserService.class);
