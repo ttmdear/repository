@@ -1,4 +1,4 @@
-package org.example.bank;
+package org.example.services;
 
 import io.grpc.stub.StreamObserver;
 import org.example.bank.proto.Account;
