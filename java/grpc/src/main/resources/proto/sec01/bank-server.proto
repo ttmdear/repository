@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package org.example.bank.proto;
+
+option java_multiple_files = true;
+option java_package = "org.example.bank.proto";
+// option java_generic_services = true;
+
+message GetAccountRequest {
+  string accountId = 1;
+}
+
+message Account {
+  string accountId = 1;
+  string name = 2;
+}
+
+service BankService {
+  rpc GetAccount(GetAccountRequest) returns (Account) {}
+}

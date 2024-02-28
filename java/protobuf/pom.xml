@@ -15,7 +15,7 @@
     </properties>
 
     <dependencies>
-        <!-- protobuf -->
+        <!-- Protobuf -->
         <dependency>
             <groupId>com.google.protobuf</groupId>
             <artifactId>protobuf-java</artifactId>
@@ -51,7 +51,7 @@
                         </additionalProtoPathElement>
                     </additionalProtoPathElements>
                     <protocExecutable>protoc</protocExecutable>
-                    <protoSourceRoot>${project.basedir}/src/main/resources/proto</protoSourceRoot>
+                    <protoSourceRoot>src/main/resources/proto</protoSourceRoot>
                 </configuration>
             </plugin>
         </plugins>

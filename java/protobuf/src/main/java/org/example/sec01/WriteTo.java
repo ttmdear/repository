@@ -1,4 +1,4 @@
-package org.example;
+package org.example.sec01;
 
 import org.example.proto.CreateUser;
 
@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.util.UUID;
 
 public class WriteTo {
+
     public static void main(String[] args) throws IOException {
         CreateUser createUser = CreateUser.newBuilder()
             .setUserId(UUID.randomUUID().toString())
@@ -15,4 +16,5 @@ public class WriteTo {
 
         createUser.writeTo(new FileOutputStream("C:\\home\\repository\\java\\protobuf\\target\\CreateUser.%s.data".formatted(createUser.getUserId())));
     }
+
 }
