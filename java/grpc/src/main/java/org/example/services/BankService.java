@@ -33,7 +33,9 @@ public class BankService extends BankServiceGrpc.BankServiceImplBase {
         }
 
         if (ACCOUNTS.containsKey(request.getAccountId())) {
-            responseObserver.onError(new RuntimeException("The account %s exists.".formatted(request.getAccountId())));
+            responseObserver.onNext(ACCOUNTS.get(request.getAccountId()));
+            responseObserver.onCompleted();
+            // responseObserver.onError(new RuntimeException("The account %s exists.".formatted(request.getAccountId())));
         }
 
         Account account = Account.newBuilder()

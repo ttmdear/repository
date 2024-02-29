@@ -63,5 +63,5 @@ service BankService {
 
   // streaming
   rpc GetAllAccountStream(google.protobuf.Empty) returns (stream Account) {}
-  rpc Deposit(stream DepositRequest) returns (stream Account) {}
+  rpc Deposit(stream DepositRequest) returns (Account) {}
 }
