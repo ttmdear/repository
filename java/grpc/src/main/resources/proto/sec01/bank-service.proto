@@ -6,6 +6,8 @@ option java_multiple_files = true;
 option java_package = "org.example.bank.proto";
 // option java_generic_services = true;
 
+import "google/protobuf/empty.proto";
+
 message GetAccountRequest {
   string accountId = 1;
 }
@@ -15,6 +17,23 @@ message Account {
   string name = 2;
 }
 
+message Event{
+  string eventId = 1;
+  string payload = 2;
+}
+
+message Note{
+  string noteId = 1;
+  string payload = 2;
+}
+
+message Notes {
+  repeated Note note = 1;
+}
+
 service BankService {
   rpc GetAccount(GetAccountRequest) returns (Account) {}
+  rpc GetAllEvents(google.protobuf.Empty) returns (stream Event) {}
+  rpc GetAllNotes(google.protobuf.Empty) returns (Notes) {}
 }
+

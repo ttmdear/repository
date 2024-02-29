@@ -7,7 +7,7 @@ import org.example.bank.proto.BankServiceGrpc;
 import org.example.bank.proto.BankServiceGrpc.BankServiceBlockingStub;
 import org.example.bank.proto.GetAccountRequest;
 
-public class GrpcClient {
+public class GrpcBlockingClient {
     public static void main(String[] args) {
         ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 8080)
             .usePlaintext()
