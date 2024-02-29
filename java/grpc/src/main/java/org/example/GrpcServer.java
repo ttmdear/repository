@@ -13,6 +13,9 @@ public class GrpcServer {
             .build();
 
         server.start();
+
+        System.out.println("Server started on %s".formatted(8080));
+
         server.awaitTermination();
     }
 }

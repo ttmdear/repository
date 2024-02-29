@@ -4,17 +4,16 @@ package org.example.bank.proto;
 
 option java_multiple_files = true;
 option java_package = "org.example.bank.proto";
-// option java_generic_services = true;
 
 import "google/protobuf/empty.proto";
 
-message GetAccountRequest {
-  string accountId = 1;
-}
-
 message Account {
   string accountId = 1;
-  string name = 2;
+  double balance = 2;
+}
+
+message Accounts {
+  repeated Account accounts = 1;
 }
 
 message Event{
@@ -31,9 +30,35 @@ message Notes {
   repeated Note note = 1;
 }
 
-service BankService {
-  rpc GetAccount(GetAccountRequest) returns (Account) {}
-  rpc GetAllEvents(google.protobuf.Empty) returns (stream Event) {}
-  rpc GetAllNotes(google.protobuf.Empty) returns (Notes) {}
+message WithdrawRequest {
+  string accountId = 1;
+  double amount = 2;
 }
 
+message Money {
+  double amount = 1;
+}
+
+message CreateAccountRequest {
+  string accountId = 1;
+  double balance = 2;
+}
+
+message GetAccountRequest {
+  string accountId = 1;
+}
+
+service BankService {
+  // unary
+  rpc CreateAccount(CreateAccountRequest) returns (Account) {}
+  rpc GetAccount(GetAccountRequest) returns (Account) {}
+  rpc GetAllAccounts(google.protobuf.Empty) returns (Accounts) {}
+
+  // streaming
+  rpc GetAllAccountStream(google.protobuf.Empty) returns (stream Account) {}
+
+  // rpc GetAllEvents(google.protobuf.Empty) returns (Event) {}
+  // rpc GetAllNotes(google.protobuf.Empty) returns (Notes) {}
+
+  // rpc Withdraw(WithdrawRequest) returns (stream Money);
+}
