@@ -48,6 +48,13 @@ message GetAccountRequest {
   string accountId = 1;
 }
 
+message DepositRequest {
+  oneof type {
+    string accountId = 1;
+    Money money = 2;
+  }
+}
+
 service BankService {
   // unary
   rpc CreateAccount(CreateAccountRequest) returns (Account) {}
@@ -56,9 +63,5 @@ service BankService {
 
   // streaming
   rpc GetAllAccountStream(google.protobuf.Empty) returns (stream Account) {}
-
-  // rpc GetAllEvents(google.protobuf.Empty) returns (Event) {}
-  // rpc GetAllNotes(google.protobuf.Empty) returns (Notes) {}
-
-  // rpc Withdraw(WithdrawRequest) returns (stream Money);
+  rpc Deposit(stream DepositRequest) returns (stream Account) {}
 }

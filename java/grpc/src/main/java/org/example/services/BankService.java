@@ -7,6 +7,7 @@ import org.example.bank.proto.Account;
 import org.example.bank.proto.Accounts;
 import org.example.bank.proto.BankServiceGrpc;
 import org.example.bank.proto.CreateAccountRequest;
+import org.example.bank.proto.DepositRequest;
 import org.example.bank.proto.Event;
 import org.example.bank.proto.GetAccountRequest;
 import org.example.bank.proto.Money;
@@ -74,5 +75,45 @@ public class BankService extends BankServiceGrpc.BankServiceImplBase {
         }
 
         responseObserver.onCompleted();
+    }
+
+    @Override
+    public StreamObserver<DepositRequest> deposit(StreamObserver<Account> responseObserver) {
+        return new StreamObserver<DepositRequest>() {
+
+            private String accountId;
+            private double amount = 0;
+
+            @Override
+            public void onNext(DepositRequest request) {
+                switch (request.getTypeCase()) {
+                    case ACCOUNTID -> {
+                        accountId = request.getAccountId();
+                    }
+                    case MONEY -> {
+                        amount += request.getMoney().getAmount();
+                    }
+                }
+            }
+
+            @Override
+            public void onError(Throwable throwable) {
+
+            }
+
+            @Override
+            public void onCompleted() {
+                Account account = ACCOUNTS.get(accountId);
+
+                Account account2 = account.toBuilder()
+                    .setBalance(account.getBalance() + amount)
+                    .build();
+
+                ACCOUNTS.put(account2.getAccountId(), account2);
+
+                responseObserver.onNext(account2);
+                responseObserver.onCompleted();
+            }
+        };
     }
 }
