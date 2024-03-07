@@ -17,6 +17,7 @@ public class Connect {
         try (Jedis jedis = pool.getResource()) {
             // Store & Retrieve a simple string
             jedis.set("foo", "bar");
+            // jedis.pipelined()
             System.out.println(jedis.get("foo")); // prints bar
 
             // Store & Retrieve a HashMap
