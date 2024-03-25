@@ -13,14 +13,14 @@
 #   -CertificatePassword $password
 
 $clientId = "..."
-$data = "..."
+$clientSecret = "..."
 $tenantId = "..."
 
 $tokenBody = @{
     Grant_Type    = "client_credentials"
     Scope         = "https://outlook.office365.com/.default"
     Client_Id     = $clientId
-    Client_Secret = $data
+    Client_Secret = $clientSecret
 }
 
 $tokenResponse = Invoke-RestMethod -Uri https://login.microsoftonline.com/$tenantId/oauth2/v2.0/token -Method POST -Body $tokenBody
